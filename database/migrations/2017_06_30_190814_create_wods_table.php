@@ -15,6 +15,14 @@ class CreateWodsTable extends Migration
     {
         Schema::create('wods', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned()->indexed();
+            $table->string('strength')->nullable();
+            $table->string('strength_results')->nullable();
+            $table->string('strength_notes')->nullable();
+            $table->string('wod_type');
+            $table->string('wod');
+            $table->string('wod_results');
+            $table->string('wod_notes')->nullable();
             $table->timestamps();
         });
     }

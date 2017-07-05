@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class wodController extends Controller
+use App\User;
+use App\Profile;
+use App\Wod;
+
+class ProfileController extends Controller
 {
   public function __construct()
   {
@@ -18,7 +22,9 @@ class wodController extends Controller
     public function index(Request $request)
     {
         //
-        return view('user.createwod')->withUser($request->user());
+        //dump($request->user());die();
+        return view('user.profile')->withUser($request->user());
+
     }
 
     /**

@@ -26,4 +26,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    //Defines relationship to Wod Class
+    public function wods() {
+      //each user can have many wods
+      return $this ->hasMany(Wod::class);
+    }
+    
 }

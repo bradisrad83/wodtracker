@@ -28,14 +28,20 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        Home
+                    <a class="navbar-brand" href="{{ url('/profile') }}">
+                        Profile
                     </a>
-                    <a class="navbar-brand" href="{{ url('/add') }}">
+                    <a class="navbar-brand" href="{{ url('/addwod') }}">
                         Add WOD
                     </a>
-                    <a class="navbar-brand" href="{{ url('/all') }}">
+                    <a class="navbar-brand" href="{{ url('/allwods') }}">
                         All WODs
+                    </a>
+                    <a class="navbar-brand" href="{{ url('/search') }}">
+                        Search
+                    </a>
+                    <a class="navbar-brand" href="{{ url('/forums') }}">
+                        Forums
                     </a>
                 </div>
 
