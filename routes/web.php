@@ -28,3 +28,5 @@ Route::resource('/createprofile', 'ProfileController');
 Route::post('addwod/{user}', 'WodController@store');
 
 Route::post('/createprofile/{user}','ProfileController@store');
+
+Route::get('addwod/{addwod}', 'WodController@show');

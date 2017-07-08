@@ -34,7 +34,7 @@
                     <a class="navbar-brand" href="{{ url('/addwod') }}">
                         Add WOD
                     </a>
-                    <a class="navbar-brand" href="{{ url('/allwods') }}">
+                    <a class="navbar-brand" href="{{ url('/addwod/{addwod}') }}">
                         All WODs
                     </a>
                     <a class="navbar-brand" href="{{ url('/search') }}">
