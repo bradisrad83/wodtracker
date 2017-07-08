@@ -28,7 +28,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/profile') }}">
+                    <a class="navbar-brand" href="{{ url('/createprofile') }}">
                         Profile
                     </a>
                     <a class="navbar-brand" href="{{ url('/addwod') }}">

@@ -23,7 +23,9 @@ class ProfileController extends Controller
     {
         //
         //dump($request->user());die();
-        return view('user.profile')->withUser($request->user());
+        return view('user.createprofile')->withUser($request->user());
+
+
 
     }
 
@@ -35,6 +37,8 @@ class ProfileController extends Controller
     public function create(Request $request)
     {
         //
+        return view('user.profile')->withUser($request->user());
+
 
     }
 
@@ -46,7 +50,38 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Creating a profile
+        $user_id = $request->user()->id;
+        $name = $request->get('name');
+        $location = $request->get('location');
+        $age = $request->get('age');
+        $height = $request->get('height');
+        $weight = $request->get('weight');
+        $affiliate = $request->get('affiliate');
+        $front_squat = $request->get('front_squat');
+        $back_squat = $request->get('back_squat');
+        $clean_and_jerk =$request->get('clean_and_jerk');
+        $snatch = $request->get('snatch');
+        $deadlift = $request->get('deadlift');
+        $bio = $request->get('bio');
+        $img_link = $request->get('img_link');
+
+        //Saving all the entered values using the Profile model and Saving them
+        //into our database
+        $user_profile = new Profile (['user_id'=>$user_id, 'name'=>$name, 'location'=>$location,
+                        'age'=>$age, 'height'=>$height, 'weight'=>$weight, 'affiliate'=>$affiliate,
+                        'front_squat'=>$front_squat, 'back_squat'=>$back_squat,
+                        'clean_and_jerk'=>$clean_and_jerk, 'snatch'=>$snatch, 'deadlift'=>$deadlift,
+                        'bio'=>$bio, 'img_link'=>$img_link]);
+
+
+
+        $user_profile->save();
+
+        //Passes the ID of the Profile to the show function so that it can be displayed after entered
+        return redirect()->action("ProfileController@create");
+
+
     }
 
     /**
@@ -58,6 +93,7 @@ class ProfileController extends Controller
     public function show($id)
     {
         //
+
     }
 
     /**

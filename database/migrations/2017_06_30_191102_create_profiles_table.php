@@ -27,7 +27,7 @@ class CreateProfilesTable extends Migration
             $table->string('clean_and_jerk')->nullable();
             $table->string('snatch')->nullable();
             $table->string('deadlift')->nullable();
-            $table->string('bio', 300)->nullable();
+            $table->text('bio')->nullable();
             $table->string('img_link')->nullable();
             $table->timestamps();
         });
