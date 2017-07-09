@@ -19,10 +19,12 @@ class wodController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index(Request $request, User $user)
     {
         //
-        return view('user.createwod')->withUser($request->user());
+        return view('user.allwods')
+                ->withWods(Wod::where('user_id', $request->user()->id)->get())
+                ->withUser($request->user());
     }
 
     /**
@@ -33,6 +35,7 @@ class wodController extends Controller
     public function create(Request $request)
     {
         //
+        return view('user.createwod')->withUser($request->user());
 
     }
 
@@ -77,10 +80,10 @@ class wodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, $id)
+    public function show(Request $request, User $user)
     {
         //
-        return view('user.showwod')->withWods(Wod::all());
+        return view('user.allwods')->withWods($user->wods());
     }
 
     /**

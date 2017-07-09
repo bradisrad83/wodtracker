@@ -6,7 +6,7 @@
 <hr>
 
 
-<form action="/createprofile/{{ $user->id }}" method="POST">
+<form action="/profile" method="POST">
 
   {{ csrf_field() }}
 

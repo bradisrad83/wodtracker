@@ -6,7 +6,7 @@
 <hr>
 
 
-<form action="/addwod/{{ $user->id }}" method="POST">
+<form action="/wod" method="POST">
 
   {{ csrf_field() }}
 

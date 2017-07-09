@@ -19,14 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/profile', 'ProfileController@create');
+Route::resource('/wod', 'WodController');
 
-Route::resource('/addwod', 'WodController');
+Route::resource('/profile', 'ProfileController');
 
-Route::resource('/createprofile', 'ProfileController');
-
-Route::post('addwod/{user}', 'WodController@store');
-
-Route::post('/createprofile/{user}','ProfileController@store');
-
-Route::get('addwod/{addwod}', 'WodController@show');
+Route::resource('/search', 'SearchController');

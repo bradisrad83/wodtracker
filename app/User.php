@@ -29,7 +29,7 @@ class User extends Authenticatable
     //Defines relationship to Wod Class
     public function wods() {
       //each user can have many wods
-      return $this ->hasMany(Wod::class);
+      return $this->hasMany(Wod::class);
     }
-    
+
 }
