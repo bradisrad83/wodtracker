@@ -13,10 +13,11 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-image:url('../images/main/main.jpg');
+                background-repeat:no-repeat;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
+                color: #ffffff;
                 height: 100vh;
                 margin: 0;
             }
@@ -50,7 +51,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #fff;
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;
@@ -67,7 +68,7 @@
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="top-right links pull-left">
                     @if (Auth::check())
                         <a href="{{ url('/home') }}">Main</a>
                     @else

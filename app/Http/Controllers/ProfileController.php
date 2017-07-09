@@ -23,7 +23,7 @@ class ProfileController extends Controller
     {
         //
         //dump($request->user());die();
-        return view('user.createprofile')->withUser($request->user());
+        return view('user.profile')->withUser($request->user());
 
 
 
@@ -37,7 +37,7 @@ class ProfileController extends Controller
     public function create(Request $request)
     {
         //
-        return view('user.profile')->withUser($request->user());
+        return view('user.createprofile')->withUser($request->user());
 
 
     }

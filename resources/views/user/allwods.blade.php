@@ -2,11 +2,11 @@
 
 @section('content')
 <div class = "container">
-<h3>WODs</h3>
+<h2>WODs</h2>
       @foreach($wods as $wod)
         <li class = "list-group-item">
 
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal">
             {{$wod->created_at->format('M d Y')}}
         </button>
 
@@ -19,31 +19,28 @@
                       <h4 class="modal-title" id="myModalLabel">{{$wod->created_at->format('M d Y')}}</h4>
                     </div>
                     <div class="modal-body">
-                      <p><strong>Strength: {{$wod->strength}}</p>
+                      <p><strong>Strength:</strong> {{$wod->strength}}</p>
 
-                      <p><strong>Strength Results: {{$wod->strength_results}}</p>
+                      <p><strong>Strength Results:</strong> {{$wod->strength_results}}</p>
 
-                      <p><strong>Strength Notes: {{$wod->strength_notes}}</p>
+                      <p><strong>Strength Notes:</strong> {{$wod->strength_notes}}</p>
 
-                      <p><strong>WOD Type: {{$wod->wod_type}}</p>
+                      <p><strong>WOD Type:</strong> {{$wod->wod_type}}</p>
 
-                      <p><strong>WOD: {{$wod->wod}}</p>
+                      <p><strong>WOD:</strong> {{$wod->wod}}</p>
 
-                      <p><strong>WOD Results: {{$wod->wod_results}}</p>
+                      <p><strong>WOD Results:</strong> {{$wod->wod_results}}</p>
 
-                      <p><strong>WOD Notes: {{$wod->wod_notes}}</p>
+                      <p><strong>WOD Notes:</strong> {{$wod->wod_notes}}</p>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                      <button type="button" class="btn btn-primary" href="/wod/update">Edit</button>
                     </div>
                   </div>
                 </div>
               </div>
         </li>
       @endforeach
-
-
-
 </div>
 @stop

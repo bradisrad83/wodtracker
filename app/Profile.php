@@ -11,7 +11,7 @@ class Profile extends Model
                           'affiliate', 'front_squat', 'back_squat', 'clean_and_jerk',
                           'snatch', 'deadlift', 'bio','img_link'];
     //defines relationship to user class
-    public function user() {
+    public function profile() {
       //Profile Model belongs to User Model
       return $this->belongsTo(User::class);
     }
