@@ -55,7 +55,6 @@ class wodController extends Controller
         //Create the new wod
         $user_id = $request->user()->id;
         $strength = $request->get('strength');
-        $strength_results = $request->get('strength_results');
         $strength_notes = $request->get('strength_notes');
         $wod_type = $request->get('wod_type');
         $wod = $request->get('wod');
@@ -65,12 +64,11 @@ class wodController extends Controller
         //creating the new WOD and saving it into the database from the
         //user entered values
         $daily_wod = new Wod(['user_id'=>$user_id, 'strength'=>$strength,
-                              'strength_results'=>$strength_results, 'strength_notes'=>$strength_notes,
-                              'wod_type'=>$wod_type, 'wod'=>$wod, 'wod_results'=>$wod_results,
-                              'wod_notes'=>$wod_notes]);
+                              'strength_notes'=>$strength_notes,'wod_type'=>$wod_type,
+                              'wod'=>$wod, 'wod_results'=>$wod_results, 'wod_notes'=>$wod_notes]);
         $daily_wod->save();
         //Passes the ID of the WOd to the show function so that it can be displayed after entered
-        return redirect()->action("WodController@show", $daily_wod->id);
+        return redirect()->action("WodController@index");
 
     }
 
@@ -83,7 +81,6 @@ class wodController extends Controller
     public function show(Request $request, User $user)
     {
         //
-        return view('user.allwods')->withWods($user->wods());
     }
 
     /**
@@ -92,9 +89,10 @@ class wodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, User $user, $id)
     {
         //
+        return view('user.editwod')->withWods($user->wods());
     }
 
     /**
@@ -107,6 +105,7 @@ class wodController extends Controller
     public function update(Request $request, $id)
     {
         //
+        return view('user.editwod')->withWods($user->wods()->id);
     }
 
     /**

@@ -22,10 +22,9 @@ class ProfileController extends Controller
     public function index(Request $request)
     {
         //
-        //dump($request->user());die();
-        return view('user.profile')->withUser($request->user());
-
-
+        return view('user.profile')
+               ->withProfile(Profile::where('user_id', $request->user()->id)->first())
+                ->withUser($request->user());
 
     }
 
@@ -79,7 +78,7 @@ class ProfileController extends Controller
         $user_profile->save();
 
         //Passes the ID of the Profile to the show function so that it can be displayed after entered
-        return redirect()->action("ProfileController@create");
+        return redirect()->action("ProfileController@index");
 
 
     }
@@ -102,9 +101,13 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, Profile $profile)
     {
         //
+        return view('user.editprofile')
+          ->withProfile($profile)
+          ->withUser($request->user());
+
     }
 
     /**
@@ -116,7 +119,14 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        Profile::find($id)->update($request->all());
+
+        return view('user.profile')
+            ->withProfile(Profile::where('user_id', $request->user()->id)->first())
+            ->withUser($request->user());
+
+
     }
 
     /**

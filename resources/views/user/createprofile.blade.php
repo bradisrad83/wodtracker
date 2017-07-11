@@ -2,7 +2,7 @@
 
 @section('content')
 <div class = "container">
-<h2>Edit Profile</h2>
+<h2>Create Profile (feel free to leave this blank and fill it out at a later time)</h2>
 <hr>
 
 

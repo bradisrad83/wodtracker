@@ -24,3 +24,5 @@ Route::resource('/wod', 'WodController');
 Route::resource('/profile', 'ProfileController');
 
 Route::resource('/search', 'SearchController');
+
+Route::get('/contact', 'ContactController@index');

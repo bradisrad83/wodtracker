@@ -32,4 +32,8 @@ class User extends Authenticatable
       return $this->hasMany(Wod::class);
     }
 
+    public function showProfile() {
+      return $this->profile()->get();
+    }
+
 }

@@ -13,6 +13,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    @yield('css')
 </head>
 <body>
     <div id="app">
@@ -39,9 +40,9 @@
                         All WODs
                     </a>
                     <a class="navbar-brand" href="{{ url('/search') }}">
-                        Search
+                        Users
                     </a>
-                    <a class="navbar-brand" href="{{ url('/forum') }}">
+                    <a class="navbar-brand" href="{{ url('/forums') }}">
                         Forums
                     </a>
                 </div>
@@ -71,6 +72,9 @@
                                                      document.getElementById('logout-form').submit();">
                                             Logout
                                         </a>
+                                        <a href="/contact">
+                                          Contact
+                                        </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
@@ -89,5 +93,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    @yield('js')
 </body>
 </html>

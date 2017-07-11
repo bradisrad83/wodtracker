@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\User;
+use App\Profile;
+use App\Wod;
+
 class SearchController extends Controller
 {
     public function __construct()
@@ -15,9 +19,13 @@ class SearchController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
+        //dump($request->user());die();
+          return view('user.search')
+              ->withUsers(User::all())
+              ->withProfile(Profile::where('user_id', $request->user()->id)->first());
     }
 
     /**

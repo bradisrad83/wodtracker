@@ -168,9 +168,7 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
-        Riari\Forum\ForumServiceProvider::class,
-        Riari\Forum\Frontend\ForumFrontendServiceProvider::class,
-
+        DevDojo\Chatter\ChatterServiceProvider::class,
         /*
          * Application Service Providers...
          */

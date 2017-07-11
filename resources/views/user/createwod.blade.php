@@ -23,18 +23,6 @@
   </div>
 
   <div class="form-group row">
-    <label for="strength_results" class="col-sm-2 form-control-label">Strength Results</label>
-    <div class="col-sm-6">
-      <textarea class="form-control"
-             rows="3"
-             type="text"
-             name="strength_results"
-             placeholder="Your results for todays strength portion">
-      </textarea>
-    </div>
-  </div>
-
-  <div class="form-group row">
     <label for="strength_notes" class="col-sm-2 form-control-label">Strength Notes</label>
     <div class="col-sm-6">
       <textarea class="form-control"
@@ -52,7 +40,7 @@
       <input class="form-control"
              type="text"
              name="wod_type"
-             placeholder="AMRAP/For Time"
+             placeholder="AMRAP/For Time/Benchmark/Hero"
              required>
     </div>
   </div>
