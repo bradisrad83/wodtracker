@@ -5,11 +5,11 @@
 <h2>WODs</h2>
       @foreach($wods as $wod)
         <li class = "list-group-item">
-          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#{{$wod->id}}myModal">
+          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal{{$wod->id}}">
               {{$wod->created_at->format('M d Y')}}
           </button>
             <!-- Modal -->
-            <div class="modal fade" id="{{$wod->id}}myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal fade" id="myModal{{$wod->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">

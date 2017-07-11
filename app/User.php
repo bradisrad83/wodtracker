@@ -32,8 +32,9 @@ class User extends Authenticatable
       return $this->hasMany(Wod::class);
     }
 
-    public function showProfile() {
-      return $this->profile()->get();
+    public function profile() {
+      //Profile Model belongs to User Model
+      return $this->belongsTo(User::class);
     }
 
 }

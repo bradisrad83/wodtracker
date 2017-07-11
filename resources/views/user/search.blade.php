@@ -3,24 +3,24 @@
 @section('content')
 <div class = "container">
 <h2>Registered Users</h2>
-    @foreach($users as $user)
+    @foreach($profiles as $profile)
       <li class = "list-group-item">
-          {{$user->id}}:
-          <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#{{$user->id}}myModal">
-              {{$user->name}}
+
+          <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal{{$profile->id}}">
+              {{$profile->name}}
           </button>
             <!-- Modal -->
-            <div class="modal fade" id="{{$user->id}}myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal fade" id="myModal{{$profile->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">{{$user->name}}</h4>
+                    <h4 class="modal-title" id="myModalLabel"></h4>
                   </div>
                   <div class="modal-body">
                     <ul>
                       <p>{{$profile->name}}</p>
-                      <img src = "{{$profile->img_link}}" alt = "profile_pic" height="200" width="200">
+                      <img src="" alt = "profile_pic" height="100" width="100">
                       <li><p><strong>Location: </strong>{{$profile->location}}</p></li>
                       <li><p><strong>Age: </strong>{{$profile->age}}</p></li>
                       <li><p><strong>Height: </strong>{{$profile->height}}</p></li>
