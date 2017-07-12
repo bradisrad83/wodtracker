@@ -21,16 +21,10 @@ class SearchController extends Controller
      */
     public function index(Request $request)
     {
-        //          ->withUsers(User::all())
-        //          ->withProfile(Profile::where('user_id', $request->user()->id)->get());
-
-        //dump($request->user());die();
           return view('user.search')
                 ->withProfiles(Profile::all())
-                ->withUsers(Profile::where('user_id', $request->user()->id)->get());
-                //where('user_id', $request->user()->id)->get())
-                //->withUser(User::all());
-
+                ->withUsers(User::all());
+          //creating Profiles and Users variable for 2 foreach loops that will be linked by the integer{{user->id}}
 
     }
 

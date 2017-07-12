@@ -3,14 +3,15 @@
 @section('content')
 <div class = "container">
 <h2>Registered Users</h2>
-    @foreach($profiles as $profile)
+    @foreach($users as $user)
       <li class = "list-group-item">
 
-          <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal{{$profile->id}}">
-              {{$profile->name}}
+          <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal{{$user->id}}">
+              {{$user->name}}
           </button>
+          @foreach($profiles as $profile)
             <!-- Modal -->
-            <div class="modal fade" id="myModal{{$profile->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal fade" id="myModal{{$profile->user_id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -40,6 +41,7 @@
                 </div>
               </div>
             </div>
+            @endforeach
       </li>
     @endforeach
 </div>

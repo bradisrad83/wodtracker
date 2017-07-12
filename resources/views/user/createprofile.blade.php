@@ -2,7 +2,8 @@
 
 @section('content')
 <div class = "container">
-<h2>Create Profile (feel free to leave this blank and fill it out at a later time)</h2>
+<h2>Create Profile</h2>
+<h10>Please fill out at least one field</h10>
 <hr>
 
 
