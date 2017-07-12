@@ -17,7 +17,8 @@
         <input class="form-control"
                type="text"
                name="name"
-               placeholder="Name">
+               placeholder="Name"
+               value="{{$profile->name}}">
       </div>
     </div>
 
@@ -27,7 +28,8 @@
         <input class="form-control"
                type="text"
                name="location"
-               placeholder="Location">
+               placeholder="Location"
+               value="{{$profile->location}}">
       </div>
     </div>
 
@@ -37,7 +39,8 @@
         <input class="form-control"
                type="number"
                name="age"
-               placeholder="Age">
+               placeholder="Age"
+               value="{{$profile->age}}">
       </div>
     </div>
 
@@ -47,7 +50,8 @@
         <input class="form-control"
                type="text"
                name="height"
-               placeholder="Height">
+               placeholder="Height"
+               value="{{$profile->height}}">
       </div>
     </div>
 
@@ -57,7 +61,8 @@
         <input class="form-control"
                type="text"
                name="weight"
-               placeholder="Weight">
+               placeholder="Weight"
+               value="{{$profile->weight}}">
       </div>
     </div>
 
@@ -67,7 +72,8 @@
         <input class="form-control"
                type="text"
                name="affiliate"
-               placeholder="Affiliate">
+               placeholder="Affiliate"
+               value="{{$profile->affiliate}}">
       </div>
     </div>
 
@@ -77,7 +83,8 @@
         <input class="form-control"
                type="text"
                name="front_squat"
-               placeholder="Front Squat">
+               placeholder="Front Squat"
+               value="{{$profile->front_squat}}">
       </div>
     </div>
 
@@ -87,7 +94,8 @@
         <input class="form-control"
                type="text"
                name="back_squat"
-               placeholder="Back Squat">
+               placeholder="Back Squat"
+               value="{{$profile->back_squat}}">
       </div>
     </div>
 
@@ -97,7 +105,8 @@
         <input class="form-control"
                type="text"
                name="clean_and_jerk"
-               placeholder="Clean and Jerk">
+               placeholder="Clean and Jerk"
+               value="{{$profile->clean_and_jerk}}">
       </div>
     </div>
 
@@ -107,7 +116,8 @@
         <input class="form-control"
                type="text"
                name="snatch"
-               placeholder="snatch">
+               placeholder="snatch"
+               value="{{$profile->snatch}}">
       </div>
     </div>
 
@@ -117,7 +127,8 @@
         <input class="form-control"
                type="text"
                name="deadlift"
-               placeholder="Deadlift">
+               placeholder="Deadlift"
+               value="{{$profile->deadlift}}">
       </div>
     </div>
 
@@ -128,7 +139,7 @@
                rows="5"
                type="text"
                name="bio"
-               placeholder="Short description of yourself">
+               placeholder="Short description of yourself">{{$profile->bio}}
         </textarea>
       </div>
     </div>
@@ -139,7 +150,8 @@
         <input class="form-control"
                type="text"
                name="img_link"
-               placeholder="Link to an image of yourself">
+               placeholder="Link to an image of yourself"
+               value="{{$profile->img_link}}">
       </div>
     </div>
 

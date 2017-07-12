@@ -40,8 +40,7 @@
       <input class="form-control"
              type="text"
              name="wod_type"
-             placeholder="AMRAP/For Time/Benchmark/Hero"
-             required>
+             placeholder="AMRAP/For Time/Benchmark/Hero">
     </div>
   </div>
 
@@ -52,8 +51,7 @@
              rows="3"
              type="text"
              name="wod"
-             placeholder="Description of the WOD"
-             required>
+             placeholder="Description of the WOD">
       </textarea>
     </div>
   </div>
@@ -64,8 +62,7 @@
       <input class="form-control"
              type="text"
              name="wod_results"
-             placeholder="Total Reps, Time, How did you do?"
-             required>
+             placeholder="Total Reps, Time, How did you do?">
     </div>
   </div>
 

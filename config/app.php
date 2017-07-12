@@ -169,6 +169,7 @@ return [
          */
         Laravel\Tinker\TinkerServiceProvider::class,
         DevDojo\Chatter\ChatterServiceProvider::class,
+        Cmgmyr\Messenger\MessengerServiceProvider::class,
         /*
          * Application Service Providers...
          */

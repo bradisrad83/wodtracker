@@ -48,9 +48,9 @@ class wodController extends Controller
     public function store(Request $request)
     {
         //Laravel validation (wod_type/wod/wod_results are required)
-        $this->validate($request, [
-          'wod_type', 'wod', 'wod_results' =>'required'
-        ]);
+        //$this->validate($request, [
+        //  'wod_type', 'wod', 'wod_results' =>'required'
+        //]);
 
         //Create the new wod
         $user_id = $request->user()->id;
@@ -78,9 +78,10 @@ class wodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, User $user)
+    public function show(Request $request, User $user, Wod $wod)
     {
         //
+        return view('user.showuserwods');
     }
 
     /**
@@ -89,10 +90,12 @@ class wodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, User $user, $id)
+    public function edit(Request $request, Wod $wod)
     {
         //
-        return view('user.editwod')->withWods($user->wods());
+        return view('user.editwod')
+              ->withWod($wod)
+              ->withUser($request->user());
     }
 
     /**
@@ -105,7 +108,19 @@ class wodController extends Controller
     public function update(Request $request, $id)
     {
         //
-        return view('user.editwod')->withWods($user->wods()->id);
+        Wod::find($id)->save($request->all());
+        return view('user.allwods')
+            ->withWods(Wod::where('user_id', $request->user()->id)->get())
+            ->withUser($request->user());
+
+
+
+
+        //Profile::find($id)->update($request->all());
+
+        //return view('user.profile')
+        //    ->withProfile(Profile::where('user_id', $request->user()->id)->first())
+        //    ->withUser($request->user());
     }
 
     /**

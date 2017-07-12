@@ -5,7 +5,7 @@
 <h2>Registered Users</h2>
     @foreach($users as $user)
       <li class = "list-group-item">
-
+          {{$user->id}}:
           <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal{{$user->id}}">
               {{$user->name}}
           </button>
@@ -32,6 +32,7 @@
                       <li><p><strong>Snatch: </strong>{{$profile->snatch}} lbs</p></li>
                       <li><p><strong>Deadlift: </strong>{{$profile->deadlift}} lbs</p></li>
                       <li><p><strong>Bio: </strong>{{$profile->bio}}</p></li>
+                      <li><p><a href="/wod/{{$profile->user_id}}"><strong>Show WODs</strong></p></li>
                     </ul>
                   </div>
                   <div class="modal-footer">

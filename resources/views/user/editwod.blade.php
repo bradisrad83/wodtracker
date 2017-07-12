@@ -18,19 +18,7 @@
              rows="3"
              type="text"
              name="strength"
-             placeholder="What is todays strength portion of the workout?">
-      </textarea>
-    </div>
-  </div>
-
-  <div class="form-group row">
-    <label for="strength_results" class="col-sm-2 form-control-label">Strength Results</label>
-    <div class="col-sm-6">
-      <textarea class="form-control"
-             rows="3"
-             type="text"
-             name="strength_results"
-             placeholder="Your results for todays strength portion">
+             placeholder="What is todays strength portion of the workout?">{{$wod->strength}}
       </textarea>
     </div>
   </div>
@@ -42,7 +30,7 @@
              rows="3"
              type="text"
              name="strength_notes"
-             placeholder="Anything to comment/note: PR, weight increases, etc...">
+             placeholder="Anything to comment/note: PR, weight increases, etc...">{{$wod->strength_notes}}
       </textarea>
     </div>
   </div>
@@ -54,7 +42,7 @@
              type="text"
              name="wod_type"
              placeholder="AMRAP/For Time"
-             required>
+             value="{{$wod->wod_type}}">
     </div>
   </div>
 
@@ -65,8 +53,7 @@
              rows="3"
              type="text"
              name="wod"
-             placeholder="Description of the WOD"
-             required>
+             placeholder="Description of the WOD">{{$wod->wod}}
       </textarea>
     </div>
   </div>
@@ -78,7 +65,7 @@
              type="text"
              name="wod_results"
              placeholder="Total Reps, Time, How did you do?"
-             required>
+             value="{{$wod->wod_results}}">
     </div>
   </div>
 
@@ -89,7 +76,7 @@
              rows="3"
              type="text"
              name="wod_notes"
-             placeholder="Anything in particular you'd like to remeber/jot down">
+             placeholder="Anything in particular you'd like to remeber/jot down">{{$wod->wod_notes}}
       </textarea>
     </div>
   </div>

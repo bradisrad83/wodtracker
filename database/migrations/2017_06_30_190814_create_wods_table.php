@@ -18,9 +18,9 @@ class CreateWodsTable extends Migration
             $table->integer('user_id')->unsigned()->indexed();
             $table->text('strength')->nullable();
             $table->text('strength_notes')->nullable();
-            $table->string('wod_type');
-            $table->text('wod');
-            $table->string('wod_results');
+            $table->string('wod_type')->nullable();
+            $table->text('wod')->nullable();
+            $table->string('wod_results')->nullable();
             $table->text('wod_notes')->nullable();
             $table->timestamps();
         });
