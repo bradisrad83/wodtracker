@@ -108,19 +108,12 @@ class wodController extends Controller
     public function update(Request $request, $id)
     {
         //
-        Wod::find($id)->save($request->all());
-        return view('user.allwods')
-            ->withWods(Wod::where('user_id', $request->user()->id)->get())
-            ->withUser($request->user());
-
-
-
-
-        //Profile::find($id)->update($request->all());
-
-        //return view('user.profile')
-        //    ->withProfile(Profile::where('user_id', $request->user()->id)->first())
+        Wod::find($id)->update($request->all());
+        //return view('user.allwods')
+        //    ->withWods(Wod::where('user_id', $request->user()->id)->get())
         //    ->withUser($request->user());
+        return redirect()->action("WodController@index");
+
     }
 
     /**

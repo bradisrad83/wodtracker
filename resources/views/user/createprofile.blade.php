@@ -3,7 +3,7 @@
 @section('content')
 <div class = "container">
 <h2>Create Profile</h2>
-<h10>Please fill out at least one field</h10>
+<h10>this can be filled out at a later time</h10>
 <hr>
 
 

@@ -13,7 +13,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-image:url('../images/main/main.jpg');
+                background-image:url('/images/main/main.jpg');
                 background-repeat:no-repeat;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
