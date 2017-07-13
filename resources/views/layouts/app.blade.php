@@ -17,7 +17,7 @@
     <style>
       body {
           padding-bottom: 50px;
-          background-image:url('/images/backgrounds/crossfit6.jpg');
+          background-image:url('/images/backgrounds/crossfit1.jpg');
           background-size: cover;
           background-repeat: no-repeat;
         }
@@ -95,9 +95,10 @@
                     <a class="navbar-brand" href="{{ url('/search') }}">
                         Users
                     </a>
-                    <a class="navbar-brand" href="{{ url('/forums') }}">
+                  <!--  <a class="navbar-brand" href="{{ url('/forums') }}">
                         Forums
-                    </a>
+                        taking this out till i get it up and working
+                    </a> -->
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
