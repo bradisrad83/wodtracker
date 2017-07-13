@@ -4,7 +4,6 @@
 <div class = "container">
 <h2 align="center">Registered Users</h2>
     @foreach($users as $user)
-      <li class = "list-group-item">
         <div class="col-sm-2">
           <p><button type="button" class="btn btn-user btn-sm navbar-inverse" data-toggle="modal" data-target="#myModal{{$user->id}}">
                 {{$user->id}}:  {{$user->name}}</button></p>
@@ -44,7 +43,6 @@
               </div>
             </div>
             @endforeach
-      </li>
     @endforeach
 </div>
 @stop
