@@ -19,7 +19,8 @@
           padding-bottom: 50px;
           background-image:url('/images/backgrounds/crossfit6.jpg');
           background-size: cover;
-          background-repeat: no-repeat;
+          height: 100vh;
+          margin: 0;
         }
      .bottom{
           color:white;

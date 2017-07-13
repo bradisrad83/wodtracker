@@ -13,8 +13,8 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-image:url('/images/main/main.jpg');
-                background-repeat: no-repeat;
+                background-image:url('/images/backgrounds/crossfit1.jpg');
+                background-size: cover;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 200;
                 color: #ffffff;
@@ -86,6 +86,7 @@
 
             </div>
         </div>
+
       </div>
       <footer>
         <nav class="navbar navbar-default navbar-fixed-bottom">
