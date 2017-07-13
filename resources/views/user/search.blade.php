@@ -2,14 +2,14 @@
 
 @section('content')
 <div class = "container">
-<h2>Registered Users</h2>
+<h2 align="center">Registered Users</h2>
     @foreach($users as $user)
       <li class = "list-group-item">
-        <h3>{{$user->id}}:
-          <button type="button" class="btn btn-primary btn-sm navbar-inverse" data-toggle="modal" data-target="#myModal{{$user->id}}">
-              {{$user->name}}
-          </button>
-        </h3>
+        <div class="col-sm-2">
+          <p><button type="button" class="btn btn-user btn-sm navbar-inverse" data-toggle="modal" data-target="#myModal{{$user->id}}">
+                {{$user->id}}:  {{$user->name}}</button></p>
+        </div>
+
           @foreach($profiles as $profile)
             <!-- Modal -->
             <div class="modal fade" id="myModal{{$profile->user_id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -33,12 +33,12 @@
                       <li><p class="mod"><strong>Snatch: </strong>{{$profile->snatch}} lbs</p></li>
                       <li><p class="mod"><strong>Deadlift: </strong>{{$profile->deadlift}} lbs</p></li>
                       <li><p class="mod"><strong>Bio: </strong>{{$profile->bio}}</p></li>
-                      <li><p class="mod"><a href="/wod/{{$profile->user_id}}"><strong>Show WODs</strong></p></li>
+                      <li><p class="mod"><a class="black" href="/wod/{{$profile->user_id}}"><strong>Show WODs</strong></p></li>
                     </ul>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default navbar-inverse" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-default navbar-inverse"><a href="/message">Message</a></button>
+                    <button type="button" class="btn btn-default navbar-inverse"><a class="bottom" href="/message">Message</a></button>
                   </div>
                 </div>
               </div>

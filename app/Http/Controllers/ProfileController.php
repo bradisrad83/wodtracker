@@ -121,10 +121,11 @@ class ProfileController extends Controller
     {
 
         Profile::find($id)->update($request->all());
+        return redirect()->action("ProfileController@index");
 
-        return view('user.profile')
-            ->withProfile(Profile::where('user_id', $request->user()->id)->first())
-            ->withUser($request->user());
+        //return view('user.profile')
+        //    ->withProfile(Profile::where('user_id', $request->user()->id)->first())
+        //    ->withUser($request->user());
 
 
     }

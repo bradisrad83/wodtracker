@@ -50,12 +50,20 @@
       }
       .list-group-item{
         background-color: transparent;
-      }
-      .list-group-item{
         border: 0px;
+        padding: 0px;
       }
       .btn{
         border: 1px solid white;
+      }
+      .btn-user{
+        width: 100%;
+      }
+      .btn-default{
+        color:white;
+      }
+      .black{
+        color:black;
       }
 
     </style>
