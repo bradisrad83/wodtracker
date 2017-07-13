@@ -71,6 +71,9 @@
         background-color: white;
         color: black;
       }
+      .btn-primary.focus, .btn-primary:focus{
+        background-color: black;
+      }
 
     </style>
 </head>
