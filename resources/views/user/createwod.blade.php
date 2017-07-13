@@ -2,7 +2,7 @@
 
 @section('content')
 <div class = "container">
-<h2>Create a WOD</h2>
+<h1>Create a WOD</h1>
 <hr>
 
 

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class = "container">
-<h2 align="center">Registered Users</h2>
+<h1 align="center">Registered Users</h1>
     @foreach($users as $user)
         <div class="col-sm-2">
           <p><button type="button" class="btn btn-user btn-sm navbar-inverse" data-toggle="modal" data-target="#myModal{{$user->id}}">

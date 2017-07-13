@@ -5,7 +5,7 @@
 <div class="container">
   <div class = "row">
     <div class = "col-sm-6">
-      <h2>Contact Webmaster</h2>
+      <h1>Contact Webmaster</h1>
         <p>Do you have any comments/concerns/suggestions?  Please feel free to fill out
            the following form and let me know what I can do to help.  Please keep in mind
            this is a free application brough to you buy a coding bootcamp student.  I will do

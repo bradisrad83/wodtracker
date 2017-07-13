@@ -2,7 +2,7 @@
 
 @section('content')
 <div class = "container">
-<h2>WODs for: </h2>
+<h1>WODs for: </h1>
       @foreach($wods as $wod)
         <li class = "list-group-item">
           <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal{{$wod->id}}">

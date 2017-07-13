@@ -2,7 +2,7 @@
 
 @section('content')
 <div class = "container">
-<h2>Edit WOD from {{$wod->created_at->format('M d Y')}}</h2>
+<h1>Edit WOD from {{$wod->created_at->format('M d Y')}}</h1>
 <hr>
 
 

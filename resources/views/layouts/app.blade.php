@@ -27,6 +27,9 @@
       h2{
         color:white;
       }
+      h1{
+        color:white;
+      }
       h3{
         color:white;
       }
