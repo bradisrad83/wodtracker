@@ -81,7 +81,7 @@ class wodController extends Controller
     public function show(Request $request, User $user, Wod $wod)
     {
         //
-        return view('user.showuserwods');
+        //return view('user.showuserwods');
     }
 
     /**
@@ -125,5 +125,8 @@ class wodController extends Controller
     public function destroy($id)
     {
         //
+        Wod::find($id)->delete();
+        return redirect()->action("WodController@index");
+
     }
 }
