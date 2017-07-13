@@ -51,7 +51,7 @@
       .list-group-item{
         background-color: transparent;
         border: 0px;
-        padding: 0px;
+        padding: 3px;
       }
       .btn{
         border: 1px solid white;
@@ -64,6 +64,10 @@
       }
       .black{
         color:black;
+      }
+      .btn:hover{
+        background-color: white;
+        color: black;
       }
 
     </style>
