@@ -3,7 +3,7 @@
 @section('content')
 <div class = "container">
 <h2>Create Profile</h2>
-<h10>this can be filled out at a later time</h10>
+<h10>please fill out at least one value</h10>
 <hr>
 
 
@@ -145,7 +145,7 @@
 
     <div class="form-group row">
       <div class="col-sm-offset-2 col-sm-6">
-        <button class="btn btn-primary" value="submit" type="submit">Submit</button>
+        <button class="btn btn-primary navbar-inverse" value="submit" type="submit">Submit</button>
       </div>
     </div>
 

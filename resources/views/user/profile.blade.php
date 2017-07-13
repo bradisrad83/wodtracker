@@ -4,7 +4,7 @@
 <div class = "container">
 <ul>
   <p>{{$profile->name}}</p>
-  <img src = "{{$profile->img_link}}" alt = "profile_pic" height="200" width="200">
+  <img src = "{{$profile->img_link}}" alt = "" height="200" width="200">
   <li><p><strong>Location: </strong>{{$profile->location}}</p></li>
   <li><p><strong>Age: </strong>{{$profile->age}}</p></li>
   <li><p><strong>Height: </strong>{{$profile->height}}</p></li>
@@ -15,9 +15,10 @@
   <li><p><strong>Snatch: </strong>{{$profile->snatch}} lbs</p></li>
   <li><p><strong>Deadlift: </strong>{{$profile->deadlift}} lbs</p></li>
   <li><p><strong>Bio: </strong>{{$profile->bio}}</p></li>
+  <li><h3><strong><a class="bottom" href ="profile/{{$profile->id}}/edit">Edit Profile</strong></a></h3></li>
 </ul>
 
-<h3><a href ="profile/{{$profile->id}}/edit">Edit Profile</a></h3>
+
 
 </div>
 

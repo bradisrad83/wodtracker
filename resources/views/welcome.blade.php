@@ -14,9 +14,9 @@
         <style>
             html, body {
                 background-image:url('/images/main/main.jpg');
-                background-repeat:no-repeat;
+                background-repeat: no-repeat;
                 font-family: 'Raleway', sans-serif;
-                font-weight: 100;
+                font-weight: 200;
                 color: #ffffff;
                 height: 100vh;
                 margin: 0;
@@ -85,5 +85,12 @@
 
             </div>
         </div>
+      <footer>
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+          <div class="container" align="center">
+            <h5>© Brad Goldsmith 2017 ©</h5>
+          </div>
+        </nav>
+      </footer>
     </body>
 </html>

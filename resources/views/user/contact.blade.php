@@ -28,7 +28,7 @@
                           rows="5"
                           required></textarea>
                 <br>
-                <button class="btn btn-primary" type="submit">Send</button>
+                <button class="btn btn-primary navbar-inverse" type="submit">Send</button>
               </form>
           </div>
     </div>

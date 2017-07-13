@@ -157,12 +157,13 @@
 
     <div class="form-group row">
       <div class="col-sm-offset-2 col-sm-6">
-        <button class="btn btn-primary" value="submit" type="submit">Save</button>
+        <button class="btn btn-primary navbar-inverse" value="submit" type="submit">Save</button>
       </div>
     </div>
 
     </form>
 </div>
+
 
 
 

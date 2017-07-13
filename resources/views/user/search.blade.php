@@ -5,10 +5,11 @@
 <h2>Registered Users</h2>
     @foreach($users as $user)
       <li class = "list-group-item">
-          {{$user->id}}:
-          <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal{{$user->id}}">
+        <h3>{{$user->id}}:
+          <button type="button" class="btn btn-primary btn-sm navbar-inverse" data-toggle="modal" data-target="#myModal{{$user->id}}">
               {{$user->name}}
           </button>
+        </h3>
           @foreach($profiles as $profile)
             <!-- Modal -->
             <div class="modal fade" id="myModal{{$profile->user_id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -20,24 +21,24 @@
                   </div>
                   <div class="modal-body">
                     <ul>
-                      <p>{{$profile->name}}</p>
-                      <img src="" alt = "profile_pic" height="100" width="100">
-                      <li><p><strong>Location: </strong>{{$profile->location}}</p></li>
-                      <li><p><strong>Age: </strong>{{$profile->age}}</p></li>
-                      <li><p><strong>Height: </strong>{{$profile->height}}</p></li>
-                      <li><p><strong>Affiliate: </strong>{{$profile->affiliate}}</p></li>
-                      <li><p><strong>Front Squat: </strong>{{$profile->front_squat}} lbs</p></li>
-                      <li><p><strong>Back Squat: </strong>{{$profile->back_squat}} lbs</p></li>
-                      <li><p><strong>Clean and Jerk: </strong>{{$profile->clean_and_jerk}} lbs</p></li>
-                      <li><p><strong>Snatch: </strong>{{$profile->snatch}} lbs</p></li>
-                      <li><p><strong>Deadlift: </strong>{{$profile->deadlift}} lbs</p></li>
-                      <li><p><strong>Bio: </strong>{{$profile->bio}}</p></li>
-                      <li><p><a href="/wod/{{$profile->user_id}}"><strong>Show WODs</strong></p></li>
+                      <p class="mod">{{$profile->name}}</p>
+                      <img src="{{$profile->img_link}}" alt = "profile_pic" height="100" width="100">
+                      <li><p class="mod"><strong>Location: </strong>{{$profile->location}}</p></li>
+                      <li><p class="mod"><strong>Age: </strong>{{$profile->age}}</p></li>
+                      <li><p class="mod"><strong>Height: </strong>{{$profile->height}}</p></li>
+                      <li><p class="mod"><strong>Affiliate: </strong>{{$profile->affiliate}}</p></li>
+                      <li><p class="mod"><strong>Front Squat: </strong>{{$profile->front_squat}} lbs</p></li>
+                      <li><p class="mod"><strong>Back Squat: </strong>{{$profile->back_squat}} lbs</p></li>
+                      <li><p class="mod"><strong>Clean and Jerk: </strong>{{$profile->clean_and_jerk}} lbs</p></li>
+                      <li><p class="mod"><strong>Snatch: </strong>{{$profile->snatch}} lbs</p></li>
+                      <li><p class="mod"><strong>Deadlift: </strong>{{$profile->deadlift}} lbs</p></li>
+                      <li><p class="mod"><strong>Bio: </strong>{{$profile->bio}}</p></li>
+                      <li><p class="mod"><a href="/wod/{{$profile->user_id}}"><strong>Show WODs</strong></p></li>
                     </ul>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-default"><a href="/message">Message</a></button>
+                    <button type="button" class="btn btn-default navbar-inverse" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default navbar-inverse"><a href="/message">Message</a></button>
                   </div>
                 </div>
               </div>

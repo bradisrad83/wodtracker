@@ -8,16 +8,61 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>WOD Tracker</title>
+    <title>Daily WOD Tracker</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     @yield('css')
+    <style>
+      body {
+          padding-bottom: 50px;
+          background-image:url('/images/backgrounds/crossfit6.jpg');
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+     .bottom{
+          color:white;
+        }
+      h2{
+        color:white;
+      }
+      h3{
+        color:white;
+      }
+      p{
+        color:white;
+      }
+      p.mod{
+        color:black;
+      }
+      label{
+        color:white;
+      }
+      label.register{
+        color:black;
+      }
+      h10{
+        color:white;
+      }
+      .btn-link{
+        color:black;
+      }
+      .list-group-item{
+        background-color: transparent;
+      }
+      .list-group-item{
+        border: 0px;
+      }
+      .btn{
+        border: 1px solid white;
+      }
+
+    </style>
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-default navbar-static-top navbar-inverse">
             <div class="container">
                 <div class="navbar-header">
 
@@ -87,12 +132,18 @@
                 </div>
             </div>
         </nav>
-
         @yield('content')
     </div>
-
+    <footer>
+      <nav class="navbar-inverse navbar-fixed-bottom">
+        <div class="container" align="center">
+          <h5><a class="bottom" href="/contact">© Brad Goldsmith 2017 ©</a></h5>
+        </div>
+      </nav>
+    </footer>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     @yield('js')
+
 </body>
 </html>
