@@ -8,7 +8,7 @@
       <h2>Contact Webmaster</h2>
         <p>Do you have any comments/concerns/suggestions?  Please feel free to fill out
            the following form and let me know what I can do to help.  Please keep in mind
-           is a free application brough to you buy a coding bootcamp student.  I will do
+           this is a free application brough to you buy a coding bootcamp student.  I will do
            my best to keep up with and try to make everyone happy.  I kindly thank you for
            using my web app and hope you have a wonderful day.
         </p>

@@ -66,6 +66,7 @@
         </style>
     </head>
     <body>
+      <div class="container">
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links pull-left">
@@ -85,6 +86,7 @@
 
             </div>
         </div>
+      </div>
       <footer>
         <nav class="navbar navbar-default navbar-fixed-bottom">
           <div class="container" align="center">
