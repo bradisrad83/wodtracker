@@ -37,7 +37,9 @@
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default navbar-inverse" data-dismiss="modal">Close</button>
+                    <!--
                     <button type="button" class="btn btn-default navbar-inverse"><a class="bottom" href="/message">Message</a></button>
+                  -->
                   </div>
                 </div>
               </div>
