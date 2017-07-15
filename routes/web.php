@@ -25,4 +25,6 @@ Route::resource('/profile', 'ProfileController');
 
 Route::resource('/search', 'SearchController');
 
+Route::resource('/benchmark', 'BenchmarkController');
+
 Route::get('/contact', 'ContactController@index');

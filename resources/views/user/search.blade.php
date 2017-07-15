@@ -2,10 +2,11 @@
 
 @section('content')
 <div class = "container">
-<h1 align="center">Registered Users</h1>
+<h1>Registered Users</h1>
+<br>
     @foreach($users as $user)
         <div class="col-sm-2">
-          <p><button type="button" class="btn btn-user btn-sm navbar-inverse" data-toggle="modal" data-target="#myModal{{$user->id}}">
+          <p><button type="button" class="btn btn-user btn-sm navbar-inverse btn-block" data-toggle="modal" data-target="#myModal{{$user->id}}">
                 {{$user->id}}:  {{$user->name}}</button></p>
         </div>
 
@@ -32,7 +33,6 @@
                       <li><p class="mod"><strong>Snatch: </strong>{{$profile->snatch}} lbs</p></li>
                       <li><p class="mod"><strong>Deadlift: </strong>{{$profile->deadlift}} lbs</p></li>
                       <li><p class="mod"><strong>Bio: </strong>{{$profile->bio}}</p></li>
-                      <li><p class="mod"><a class="black" href="/wod/{{$profile->user_id}}"><strong>Show WODs</strong></p></li>
                     </ul>
                   </div>
                   <div class="modal-footer">

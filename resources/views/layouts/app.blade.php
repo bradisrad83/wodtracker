@@ -74,6 +74,12 @@
       .btn-primary.focus, .btn-primary:focus{
         background-color: black;
       }
+      .col-sm-2{
+        padding-bottom: 20px;
+      }
+      .becnmark-btn{
+        margin-bottom: 10px;
+      }
 
     </style>
 </head>
@@ -104,6 +110,11 @@
                     <a class="navbar-brand" href="{{ url('/search') }}">
                         Users
                     </a>
+                    <a class="navbar-brand" href="{{ url('/benchmark') }}">
+                        Benchmarks/PRs
+                    </a>
+
+
                   <!--  <a class="navbar-brand" href="{{ url('/forums') }}">
                         Forums
                         taking this out till i get it up and working

@@ -4,10 +4,11 @@
 <div class = "container">
 <h1>WODs</h1>
       @foreach($wods as $wod)
-        <li class = "list-group-item">
-          <button type="button" class="btn btn-primary navbar-inverse btn-sm" data-toggle="modal" data-target="#myModal{{$wod->id}}">
-              {{$wod->created_at->format('M d Y')}}: {{$wod->wod_type}}-{{$wod->wod}}
+          <div class="col-sm-2">
+          <button type="button" class="btn btn-primary navbar-inverse btn-sm btn-block" data-toggle="modal" data-target="#myModal{{$wod->id}}">
+              {{$wod->created_at->format('M d Y')}}
           </button>
+        </div>
             <!-- Modal -->
             <div class="modal fade" id="myModal{{$wod->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
               <div class="modal-dialog" role="document">
@@ -36,7 +37,6 @@
                 </div>
               </div>
             </div>
-        </li>
       @endforeach
 
 </div>

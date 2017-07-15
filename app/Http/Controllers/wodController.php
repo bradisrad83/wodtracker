@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Profile;
 use App\Wod;
+use App\Benchmark;
 
 class wodController extends Controller
 {

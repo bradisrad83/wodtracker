@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\User;
 use App\Profile;
 use App\Wod;
 use App\Benchmark;
 
-class SearchController extends Controller
+use Illuminate\Http\Request;
+
+class BenchmarkController extends Controller
 {
     public function __construct()
     {
-      $this->middleware('auth');
+        $this->middleware('auth');
     }
     /**
      * Display a listing of the resource.
@@ -22,11 +22,10 @@ class SearchController extends Controller
      */
     public function index(Request $request)
     {
-          return view('user.search')
-                ->withProfiles(Profile::all())
-                ->withUsers(User::all());
-          //creating Profiles and Users variable for 2 foreach loops that will be linked by the integer{{user->id}}
-
+        //
+        return view('user.benchmarks')
+                ->withBenchmarks(Benchmark::where('user_id', $request->user()->id)->get())
+                ->withUser($request->user());
     }
 
     /**
@@ -47,7 +46,24 @@ class SearchController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //makes all fields required
+        $this->validate($request, [
+          'benchmark', 'benchmark_results' =>'required'
+        ]);
+
+        //making new Benchmark models
+        $user_id = $request->user()->id;
+        $benchmark = $request->get('benchmark');
+        $benchmark_results = $request->get('benchmark_results');
+
+        $new_benchmark = New Benchmark(['user_id'=>$user_id,
+          'benchmark'=>$benchmark, 'benchmark_results'=>$benchmark_results
+        ]);
+        $new_benchmark->save();
+
+        return redirect()->action("BenchmarkController@index");
+
+
     }
 
     /**
@@ -93,5 +109,7 @@ class SearchController extends Controller
     public function destroy($id)
     {
         //
+        Benchmark::find($id)->delete();
+        return redirect()->action("BenchmarkController@index");
     }
 }
