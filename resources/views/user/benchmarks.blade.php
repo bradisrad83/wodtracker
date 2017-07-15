@@ -20,7 +20,7 @@
           <label for="benchmark_results" class="col-sm-2 form-control-label">Results: </label>
           <div class="col-sm-6">
             <input class="form-control"
-                   type="text"
+                   type="name"
                    name="benchmark_results"
                    placeholder="Results">
           </div>

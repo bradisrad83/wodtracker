@@ -9,7 +9,7 @@ use App\Profile;
 use App\Wod;
 use App\Benchmark;
 
-class wodController extends Controller
+class WodController extends Controller
 {
   public function __construct()
   {
