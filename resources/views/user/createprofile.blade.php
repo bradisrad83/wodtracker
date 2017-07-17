@@ -150,8 +150,5 @@
     </div>
 
     </form>
+    @endsection
 </div>
-
-
-
-@endsection

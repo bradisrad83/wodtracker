@@ -32,9 +32,7 @@
             </div>
         </li>
       @endforeach
+      @stop
+
 
 </div>
-
-
-
-@stop
