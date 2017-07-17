@@ -98,24 +98,26 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/profile') }}">
-                        Profile
-                    </a>
-                    <a class="navbar-brand" href="{{ url('/wod/create') }}">
-                        Add WOD
-                    </a>
-                    <a class="navbar-brand" href="{{ url('/wod') }}">
-                        All WODs
-                    </a>
-                    <a class="navbar-brand" href="{{ url('/search') }}">
-                        Users
-                    </a>
-                    <a class="navbar-brand" href="{{ url('/benchmark') }}">
-                        Benchmarks/PRs
-                    </a>
-                    <a class="navbar-brand" href="{{ url('/contact') }}">
-                      Contact
-                    </a>
+                    <div class="mainbar">
+                      <a class="navbar-brand" href="{{ url('/profile') }}">
+                          Profile
+                      </a>
+                      <a class="navbar-brand" href="{{ url('/wod/create') }}">
+                          Add WOD
+                      </a>
+                      <a class="navbar-brand" href="{{ url('/wod') }}">
+                          All WODs
+                      </a>
+                      <a class="navbar-brand" href="{{ url('/search') }}">
+                          Users
+                      </a>
+                      <a class="navbar-brand" href="{{ url('/benchmark') }}">
+                          Benchmarks/PRs
+                      </a>
+                      <a class="navbar-brand" href="{{ url('/contact') }}">
+                        Contact
+                      </a>
+                  </div>
 
 
 
