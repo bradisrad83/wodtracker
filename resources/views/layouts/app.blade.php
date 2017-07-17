@@ -115,6 +115,7 @@
                     </a>
 
 
+
                   <!--  <a class="navbar-brand" href="{{ url('/forums') }}">
                         Forums
                         taking this out till i get it up and working
@@ -145,6 +146,21 @@
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             Logout
+                                        </a>
+                                        <a href="{{ url('/profile') }}">
+                                            Profile
+                                        </a>
+                                        <a href="{{ url('/wod/create') }}">
+                                            Add WOD
+                                        </a>
+                                        <a href="{{ url('/wod') }}">
+                                            All WODs
+                                        </a>
+                                        <a href="{{ url('/search') }}">
+                                            Users
+                                        </a>
+                                        <a href="{{ url('/benchmark') }}">
+                                            Benchmarks/PRs
                                         </a>
                                         <a href="/contact">
                                           Contact
