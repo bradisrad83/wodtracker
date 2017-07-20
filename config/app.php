@@ -169,6 +169,8 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         DevDojo\Chatter\ChatterServiceProvider::class,
         Cmgmyr\Messenger\MessengerServiceProvider::class,
+        Nahid\Talk\TalkServiceProvider::class,
+        Aws\Laravel\AwsServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -229,6 +231,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Talk' => Nahid\Talk\Facades\Talk::class,
+        'AWS' => Aws\Laravel\AwsFacade::class,
 
     ],
 

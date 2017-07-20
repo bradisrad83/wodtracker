@@ -3,11 +3,11 @@
 @section('content')
 <div class = "container">
 <h1>Create Profile</h1>
-<h10>you can fill these out later</h10>
+<h10>please make sure to hit the submit button even if you do not fill out any/all fields</h10>
 <hr>
 
 
-<form action="/profile" method="POST">
+<form action="/profile" method="POST" enctype="multipart/form-data">
 
   {{ csrf_field() }}
 
@@ -52,12 +52,12 @@
     </div>
 
     <div class="form-group row">
-      <label for="weight" class="col-sm-2 form-control-label">Weight (lbs)</label>
+      <label for="weight" class="col-sm-2 form-control-label">Weight</label>
       <div class="col-sm-6">
         <input class="form-control"
                type="text"
                name="weight"
-               placeholder="Weight">
+               placeholder="Weight, please specify lbs/kgs">
       </div>
     </div>
 
@@ -72,52 +72,52 @@
     </div>
 
     <div class="form-group row">
-      <label for="front_squat" class="col-sm-2 form-control-label">Max Front Squat (lbs)</label>
+      <label for="front_squat" class="col-sm-2 form-control-label">Max Front Squa</label>
       <div class="col-sm-6">
         <input class="form-control"
                type="text"
                name="front_squat"
-               placeholder="Front Squat">
+               placeholder="Front Squat, specify lbs/kgs">
       </div>
     </div>
 
     <div class="form-group row">
-      <label for="back_squat" class="col-sm-2 form-control-label">Max Back Squat (lbs)</label>
+      <label for="back_squat" class="col-sm-2 form-control-label">Max Back Squat</label>
       <div class="col-sm-6">
         <input class="form-control"
                type="text"
                name="back_squat"
-               placeholder="Back Squat">
+               placeholder="Back Squat specify lbs/kgs">
       </div>
     </div>
 
     <div class="form-group row">
-      <label for="clean_and_jerk" class="col-sm-2 form-control-label">Max Clean and Jerk (lbs)</label>
+      <label for="clean_and_jerk" class="col-sm-2 form-control-label">Max Clean and Jerk</label>
       <div class="col-sm-6">
         <input class="form-control"
                type="text"
                name="clean_and_jerk"
-               placeholder="Clean and Jerk">
+               placeholder="Clean and Jerk, specify lbs/kgs">
       </div>
     </div>
 
     <div class="form-group row">
-      <label for="snatch" class="col-sm-2 form-control-label">Max Snatch (lbs)</label>
+      <label for="snatch" class="col-sm-2 form-control-label">Max Snatch</label>
       <div class="col-sm-6">
         <input class="form-control"
                type="text"
                name="snatch"
-               placeholder="snatch">
+               placeholder="Snatch, specify lbs/kgs">
       </div>
     </div>
 
     <div class="form-group row">
-      <label for="deadlift" class="col-sm-2 form-control-label">Max Deadlift (lbs)</label>
+      <label for="deadlift" class="col-sm-2 form-control-label">Max Deadlift</label>
       <div class="col-sm-6">
         <input class="form-control"
                type="text"
                name="deadlift"
-               placeholder="Deadlift">
+               placeholder="Deadlift, specify lbs/kgs">
       </div>
     </div>
 
@@ -134,12 +134,11 @@
     </div>
 
     <div class="form-group row">
-      <label for="img_linik" class="col-sm-2 form-control-label">Image Link</label>
+      <label for="profile_img" class="col-sm-2 form-control-label">Profile Picture</label>
       <div class="col-sm-6">
-        <input class="form-control"
-               type="text"
-               name="img_link"
-               placeholder="Link to an image of yourself">
+        <input
+               type="file"
+               name="profile_img">
       </div>
     </div>
 

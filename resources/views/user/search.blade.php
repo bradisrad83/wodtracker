@@ -27,11 +27,11 @@
                       <li><p class="mod"><strong>Age: </strong>{{$profile->age}}</p></li>
                       <li><p class="mod"><strong>Height: </strong>{{$profile->height}}</p></li>
                       <li><p class="mod"><strong>Affiliate: </strong>{{$profile->affiliate}}</p></li>
-                      <li><p class="mod"><strong>Front Squat: </strong>{{$profile->front_squat}} lbs</p></li>
-                      <li><p class="mod"><strong>Back Squat: </strong>{{$profile->back_squat}} lbs</p></li>
-                      <li><p class="mod"><strong>Clean and Jerk: </strong>{{$profile->clean_and_jerk}} lbs</p></li>
-                      <li><p class="mod"><strong>Snatch: </strong>{{$profile->snatch}} lbs</p></li>
-                      <li><p class="mod"><strong>Deadlift: </strong>{{$profile->deadlift}} lbs</p></li>
+                      <li><p class="mod"><strong>Front Squat: </strong>{{$profile->front_squat}}</p></li>
+                      <li><p class="mod"><strong>Back Squat: </strong>{{$profile->back_squat}}</p></li>
+                      <li><p class="mod"><strong>Clean and Jerk: </strong>{{$profile->clean_and_jerk}}</p></li>
+                      <li><p class="mod"><strong>Snatch: </strong>{{$profile->snatch}}</p></li>
+                      <li><p class="mod"><strong>Deadlift: </strong>{{$profile->deadlift}}</p></li>
                       <li><p class="mod"><strong>Bio: </strong>{{$profile->bio}}</p></li>
                     </ul>
                   </div>

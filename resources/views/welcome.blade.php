@@ -80,6 +80,16 @@
             @endif
 
             <div class="content">
+              <div class="row">
+                <div class="col-sm-4">
+                  <h2>Attention everyone I made a few changes to this application.
+                    You can now upload a picture of yourself for your profile and
+                    also I changed the profile so that your squats/snatch/deadlift
+                    will be up to you to enter lbs or kgs.  I should've done this at
+                    first so I do apologize for the inconvenience.  Feel free to
+                    edit your profile accordingly.</h2>
+                </div>
+              </div>
                 <div class="title m-b-md">
                     Daily WOD Tracker
                 </div>

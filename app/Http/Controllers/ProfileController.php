@@ -8,6 +8,7 @@ use App\User;
 use App\Profile;
 use App\Wod;
 use App\Benchmark;
+use Storage;
 
 class ProfileController extends Controller
 {
@@ -64,7 +65,12 @@ class ProfileController extends Controller
         $snatch = $request->get('snatch');
         $deadlift = $request->get('deadlift');
         $bio = $request->get('bio');
-        $img_link = $request->get('img_link');
+
+        $hashname = $request->file('profile_img')->hashName();
+
+        Storage::disk('s3')->put('profile-pictures/', $request->file('profile_img'), 'public');
+
+        $img_link = "profile-pictures/" . $hashname;
 
         //Saving all the entered values using the Profile model and Saving them
         //into our database
@@ -118,10 +124,23 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Profile $profile)
     {
 
-        Profile::find($id)->update($request->all());
+      if ($request->file('profile_img')) {
+
+        $hashname = $request->file('profile_img')->hashName();
+
+        Storage::disk('s3')->put('profile-pictures/', $request->file('profile_img'), 'public');
+
+        $img_link = "profile-pictures/" . $hashname;
+
+        $request['img_link'] = $img_link;
+
+        Storage::disk('s3')->delete($profile->img_link);
+      }
+
+        $profile->update($request->all());
         return redirect()->action("ProfileController@index");
 
         //return view('user.profile')
