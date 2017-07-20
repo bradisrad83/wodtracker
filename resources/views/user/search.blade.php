@@ -6,7 +6,7 @@
 <br>
     @foreach($users as $user)
         <div class="col-sm-2">
-          <p><button type="button" class="btn btn-user btn-sm navbar-inverse btn-block" data-toggle="modal" data-target="#myModal{{$user->id}}">
+          <p><button type="button" class="btn btn-user btn-sm navbar-inverse btn-block" data-toggle="modal" data-target="#myModal{{$user->id}}" style="overflow:hidden">
                 {{$user->id}}:  {{$user->name}}</button></p>
         </div>
 
