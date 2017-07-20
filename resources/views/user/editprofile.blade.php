@@ -161,7 +161,5 @@
 
     </form>
 
-
-</div>
-<h1>TEST</h1>
     @endsection
+</div>

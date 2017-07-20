@@ -62,7 +62,7 @@
 
             .m-b-md {
                 margin-bottom: 30px;
-            }
+            } 
         </style>
     </head>
     <body>
@@ -80,7 +80,7 @@
             @endif
 
             <div class="content">
-              <div class="row">
+              <div class="message">
                 <div class="col-sm-4">
                   <h2>Attention everyone I made a few changes to this application.
                     You can now upload a picture of yourself for your profile and
