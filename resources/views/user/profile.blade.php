@@ -14,7 +14,9 @@
   <li><p><strong>Clean and Jerk: </strong>{{$profile->clean_and_jerk}}</p></li>
   <li><p><strong>Snatch: </strong>{{$profile->snatch}}</p></li>
   <li><p><strong>Deadlift: </strong>{{$profile->deadlift}}</p></li>
-  <li><p><strong>Bio: </strong>{{$profile->bio}}</p></li>
+  <div class="col-4-sm">
+    <li><p><strong>Bio: </strong>{{$profile->bio}}</p></li>
+  </div>
   <li><h3><strong><a class="bottom" href ="profile/{{$profile->id}}/edit">Edit Profile</strong></a></h3></li>
 </ul>
 

@@ -141,6 +141,7 @@ class ProfileController extends Controller
       }
 
         $profile->update($request->all());
+        
         return redirect()->action("ProfileController@index");
 
         //return view('user.profile')
