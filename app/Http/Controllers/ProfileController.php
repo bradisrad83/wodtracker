@@ -72,8 +72,9 @@ class ProfileController extends Controller
             Storage::disk('s3')->put('profile-pictures/', $request->file('profile_img'), 'public');
 
             $img_link="profile-pictures/" . $hashname;
+          }else{
+            $img_link=$request->get('img_link');
           }
-        $img_link=$request->get('img_link');
 
         //Saving all the entered values using the Profile model and Saving them
         //into our database

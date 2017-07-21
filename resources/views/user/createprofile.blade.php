@@ -3,7 +3,7 @@
 @section('content')
 <div class = "container">
 <h1>Create Profile</h1>
-<h10>please make sure to hit the submit button even if you don't fill out any informationg</h10>
+<h10>please make sure to hit the submit button even if you leave the fields blank</h10>
 <hr>
 
 
