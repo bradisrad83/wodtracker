@@ -52,29 +52,32 @@ class ProfileController extends Controller
     public function store(Request $request)
     {
         //Creating a profile
-        $user_id = $request->user()->id;
-        $name = $request->get('name');
-        $location = $request->get('location');
-        $age = $request->get('age');
-        $height = $request->get('height');
-        $weight = $request->get('weight');
-        $affiliate = $request->get('affiliate');
-        $front_squat = $request->get('front_squat');
-        $back_squat = $request->get('back_squat');
-        $clean_and_jerk =$request->get('clean_and_jerk');
-        $snatch = $request->get('snatch');
-        $deadlift = $request->get('deadlift');
-        $bio = $request->get('bio');
+        $user_id=$request->user()->id;
+        $name=$request->get('name');
+        $location=$request->get('location');
+        $age=$request->get('age');
+        $height=$request->get('height');
+        $weight=$request->get('weight');
+        $affiliate=$request->get('affiliate');
+        $front_squat=$request->get('front_squat');
+        $back_squat=$request->get('back_squat');
+        $clean_and_jerk=$request->get('clean_and_jerk');
+        $snatch=$request->get('snatch');
+        $deadlift=$request->get('deadlift');
+        $bio=$request->get('bio');
 
-        $hashname = $request->file('profile_img')->hashName();
+        if ($request->file('profile_img')) {
+            $hashname=$request->file('profile_img')->hashName();
 
-        Storage::disk('s3')->put('profile-pictures/', $request->file('profile_img'), 'public');
+            Storage::disk('s3')->put('profile-pictures/', $request->file('profile_img'), 'public');
 
-        $img_link = "profile-pictures/" . $hashname;
+            $img_link="profile-pictures/" . $hashname;
+          }
+        $img_link=$request->get('img_link');
 
         //Saving all the entered values using the Profile model and Saving them
         //into our database
-        $user_profile = new Profile (['user_id'=>$user_id, 'name'=>$name, 'location'=>$location,
+        $user_profile=new Profile (['user_id'=>$user_id, 'name'=>$name, 'location'=>$location,
                         'age'=>$age, 'height'=>$height, 'weight'=>$weight, 'affiliate'=>$affiliate,
                         'front_squat'=>$front_squat, 'back_squat'=>$back_squat,
                         'clean_and_jerk'=>$clean_and_jerk, 'snatch'=>$snatch, 'deadlift'=>$deadlift,
@@ -129,19 +132,19 @@ class ProfileController extends Controller
 
       if ($request->file('profile_img')) {
 
-        $hashname = $request->file('profile_img')->hashName();
+        $hashname=$request->file('profile_img')->hashName();
 
         Storage::disk('s3')->put('profile-pictures/', $request->file('profile_img'), 'public');
 
-        $img_link = "profile-pictures/" . $hashname;
+        $img_link="profile-pictures/" . $hashname;
 
-        $request['img_link'] = $img_link;
+        $request['img_link']=$img_link;
 
         Storage::disk('s3')->delete($profile->img_link);
       }
 
         $profile->update($request->all());
-        
+
         return redirect()->action("ProfileController@index");
 
         //return view('user.profile')
