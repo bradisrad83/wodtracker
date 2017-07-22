@@ -114,6 +114,10 @@
                       <a class="navbar-brand" href="{{ url('/benchmark') }}">
                           Benchmarks/PRs
                       </a>
+                      <!--
+                      <a class="navbar-brand" href="{{ url('/forums') }}">
+                            Forums
+                        </a> -->
                       <a class="navbar-brand" href="{{ url('/contact') }}">
                         Contact
                       </a>
@@ -121,10 +125,7 @@
 
 
 
-                  <!--  <a class="navbar-brand" href="{{ url('/forums') }}">
-                        Forums
-                        taking this out till i get it up and working
-                    </a> -->
+
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">

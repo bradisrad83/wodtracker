@@ -23,7 +23,9 @@
 
     <style>
     body {
-        padding: 30px 0;
+      padding-bottom: 50px;
+      background-image:url('/images/backgrounds/crossfit6.jpg');
+      background-size: cover;
     }
 
     textarea {
