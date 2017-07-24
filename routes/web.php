@@ -27,4 +27,6 @@ Route::resource('/search', 'SearchController');
 
 Route::resource('/benchmark', 'BenchmarkController');
 
+Route::resource('/progress', 'ProgressController');
+
 Route::get('/contact', 'ContactController@index');
