@@ -114,10 +114,9 @@
                       <a class="navbar-brand" href="{{ url('/benchmark') }}">
                           Benchmarks/PRs
                       </a>
-                      <!--
                       <a class="navbar-brand" href="{{ url('/forums') }}">
                             Forums
-                        </a> -->
+                        </a>
                       <a class="navbar-brand" href="{{ url('/contact') }}">
                         Contact
                       </a>
