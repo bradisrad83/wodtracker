@@ -64,7 +64,7 @@ class WodController extends Controller
         $wod_notes = $request->get('wod_notes');
 
         if ($request->file('board_img')) {
-            $hashname=$request->file('board_img')->hashName()->resize(200, 400);
+            $hashname=$request->file('board_img')->hashName();
 
             Storage::disk('s3')->put('wod-pictures/', $request->file('board_img'), 'public');
 
