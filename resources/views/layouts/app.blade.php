@@ -111,15 +111,19 @@
                       <a class="navbar-brand" href="{{ url('/benchmark') }}">
                           Benchmarks/PRs
                       </a>
+                      <!--
                       <a class="navbar-brand" href="{{ url('/progress') }}">
                           Track Progress
                       </a>
+                    -->
                       <a class="navbar-brand" href="{{ url('/search') }}">
                           Users
                       </a>
+                      <!--
                       <a class="navbar-brand" href="{{ url('/forums') }}">
                             Forums
                         </a>
+                      -->
                       <a class="navbar-brand" href="{{ url('/contact') }}">
                         Contact
                       </a>
@@ -167,9 +171,11 @@
                                         <a href="{{ url('/benchmark') }}">
                                             Benchmarks/PRs
                                         </a>
+                                        <!--
                                         <a href="{{ url('/progress') }}">
                                             Track Progress
                                         </a>
+                                      -->
                                         <a href="{{ url('/search') }}">
                                             Users
                                         </a>
