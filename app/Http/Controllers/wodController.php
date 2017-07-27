@@ -65,6 +65,7 @@ class WodController extends Controller
 
         if ($request->file('board_img')) {
             $hashname=$request->file('board_img')->hashName();
+            $request->file('board_img')=Image::make($request->file('board_img'))->resize(150,300);
 
             Storage::disk('s3')->put('wod-pictures/', $request->file('board_img'), 'public');
 
@@ -124,6 +125,7 @@ class WodController extends Controller
         if ($request->file('board_img')) {
 
           $hashname=$request->file('board_img')->hashName();
+          $request->file('board_img')=Image::make($request->file('board_img'))->resize(150,300);
 
           Storage::disk('s3')->put('wod-pictures/', $request->file('board_img'), 'public');
 
