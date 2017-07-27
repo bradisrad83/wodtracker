@@ -70,7 +70,7 @@ class WodController extends Controller
 
             $wod_img="wod-pictures/" . $hashname;
           }else{
-            $wod_img=$request->get('board_img');
+            $wod_img=$request->get('wod_img');
           }
 
         //creating the new WOD and saving it into the database from the
@@ -118,10 +118,22 @@ class WodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Wod $wod)
     {
         //
-        Wod::find($id)->update($request->all());
+        if ($request->file('board_img')) {
+
+          $hashname=$request->file('board_img')->hashName();
+
+          Storage::disk('s3')->put('wod-pictures/', $request->file('board_img'), 'public');
+
+          $wod_img="wod-pictures/" . $hashname;
+
+          $request['wod_img']=$wod_img;
+
+          Storage::disk('s3')->delete($wod->wod_img);
+        }
+        Wod::find($wod->id)->update($request->all());
         //return view('user.allwods')
         //    ->withWods(Wod::where('user_id', $request->user()->id)->get())
         //    ->withUser($request->user());
