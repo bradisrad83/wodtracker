@@ -147,10 +147,11 @@ class WodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Wod $wod)
     {
         //
-        Wod::find($id)->delete();
+        Storage::disk('s3')->delete($wod->wod_img);
+        Wod::find($wod->id)->delete();
         return redirect()->action("WodController@index");
 
     }
