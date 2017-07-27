@@ -8,6 +8,7 @@ use App\User;
 use App\Profile;
 use App\Wod;
 use App\Benchmark;
+use Storage;
 
 class WodController extends Controller
 {
@@ -62,11 +63,22 @@ class WodController extends Controller
         $wod_results = $request->get('wod_results');
         $wod_notes = $request->get('wod_notes');
 
+        if ($request->file('board_img')) {
+            $hashname=$request->file('board_img')->hashName();
+
+            Storage::disk('s3')->put('wod-pictures/', $request->file('board_img'), 'public');
+
+            $wod_img="wod-pictures/" . $hashname;
+          }else{
+            $wod_img=$request->get('board_img');
+          }
+
         //creating the new WOD and saving it into the database from the
         //user entered values
         $daily_wod = new Wod(['user_id'=>$user_id, 'strength'=>$strength,
                               'strength_notes'=>$strength_notes,'wod_type'=>$wod_type,
-                              'wod'=>$wod, 'wod_results'=>$wod_results, 'wod_notes'=>$wod_notes]);
+                              'wod'=>$wod, 'wod_results'=>$wod_results, 'wod_notes'=>$wod_notes,
+                              'wod_img'=>$wod_img]);
         $daily_wod->save();
         //Passes the ID of the WOd to the show function so that it can be displayed after entered
         return redirect()->action("WodController@index");
