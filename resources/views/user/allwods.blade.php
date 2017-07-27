@@ -19,7 +19,7 @@
                   </div>
                   <div class="modal-body">
                     @if($wod->wod_img)
-                      <img src="https://s3.us-east-2.amazonaws.com/dwtbucket/{{$wod->wod_img}}" alt = "" height="250" width="250">
+                      <img src="https://s3.us-east-2.amazonaws.com/dwtbucket/{{$wod->wod_img}}" alt = "" height="200" width="400">
                     @endif
                     <p class="mod"><strong>Strength: </strong>{{$wod->strength}}</p>
                     <p class="mod"><strong>Strength Notes:</strong> {{$wod->strength_notes}}</p>
