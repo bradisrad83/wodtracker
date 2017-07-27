@@ -10,7 +10,7 @@
 
   {{ csrf_field() }}
 
-<!--  <div class="form-group row">
+ <div class="form-group row">
     <label for="board_img" class="col-sm-2 form-control-label">Picture of your WOD (whiteboard)</label>
     <div class="col-sm-6">
       <input
@@ -18,7 +18,6 @@
              name="board_img">
     </div>
   </div>
--->
 
   <div class="form-group row">
     <label for="strength" class="col-sm-2 form-control-label">Strength Portion</label>

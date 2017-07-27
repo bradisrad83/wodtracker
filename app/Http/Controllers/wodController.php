@@ -63,22 +63,22 @@ class WodController extends Controller
         $wod_results = $request->get('wod_results');
         $wod_notes = $request->get('wod_notes');
 
-      //  if ($request->file('board_img')) {
-      //      $hashname=$request->file('board_img')->hashName();
+        if ($request->file('board_img')) {
+            $hashname=$request->file('board_img')->hashName();
 
-      //      Storage::disk('s3')->put('wod-pictures/', $request->file('board_img'), 'public');
+            Storage::disk('s3')->put('wod-pictures/', $request->file('board_img'), 'public');
 
-    //        $wod_img="wod-pictures/" . $hashname;
-    //      }else{
-    //        $wod_img=$request->get('board_img');
-  //        }
+            $wod_img="wod-pictures/" . $hashname;
+          }else{
+            $wod_img=$request->get('board_img');
+          }
 
         //creating the new WOD and saving it into the database from the
         //user entered values
         $daily_wod = new Wod(['user_id'=>$user_id, 'strength'=>$strength,
                               'strength_notes'=>$strength_notes,'wod_type'=>$wod_type,
-                              'wod'=>$wod, 'wod_results'=>$wod_results, 'wod_notes'=>$wod_notes]);
-                              //'wod_img'=>$wod_img]);
+                              'wod'=>$wod, 'wod_results'=>$wod_results, 'wod_notes'=>$wod_notes,
+                              'wod_img'=>$wod_img]);
         $daily_wod->save();
         //Passes the ID of the WOd to the show function so that it can be displayed after entered
         return redirect()->action("WodController@index");
@@ -121,18 +121,20 @@ class WodController extends Controller
     public function update(Request $request, Wod $wod)
     {
         //
-        //if ($request->file('board_img')) {
+        if ($request->file('board_img')) {
 
-          //$hashname=$request->file('board_img')->hashName();
+          $hashname=$request->file('board_img')->hashName();
+          $resize_img=$request->file('board_img');
+          $resize_img=Image::make($resize_img)->resize(150,300);
 
-          //Storage::disk('s3')->put('wod-pictures/', $request->file('board_img'), 'public');
+          Storage::disk('s3')->put('wod-pictures/', $resize_img, 'public');
 
-          //$wod_img="wod-pictures/" . $hashname;
+          $wod_img="wod-pictures/" . $hashname;
 
-          //$request['wod_img']=$wod_img;
+          $request['wod_img']=$wod_img;
 
-          //Storage::disk('s3')->delete($wod->wod_img);
-        //}
+          Storage::disk('s3')->delete($wod->wod_img);
+        }
         Wod::find($wod->id)->update($request->all());
         //return view('user.allwods')
         //    ->withWods(Wod::where('user_id', $request->user()->id)->get())
@@ -150,7 +152,7 @@ class WodController extends Controller
     public function destroy(Wod $wod)
     {
         //
-      //  Storage::disk('s3')->delete($wod->wod_img);
+        Storage::disk('s3')->delete($wod->wod_img);
         Wod::find($wod->id)->delete();
         return redirect()->action("WodController@index");
 
