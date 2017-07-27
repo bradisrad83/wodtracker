@@ -18,6 +18,7 @@
                     <h4 class="modal-title" id="myModalLabel">{{$wod->created_at->format('M d Y')}}</h4>
                   </div>
                   <div class="modal-body">
+                    <img src="https://s3.us-east-2.amazonaws.com/dwtbucket/{{$wod->wod_img}}" alt = "board_img" height="200" width="200">
                     <p class="mod"><strong>Strength: </strong>{{$wod->strength}}</p>
                     <p class="mod"><strong>Strength Notes:</strong> {{$wod->strength_notes}}</p>
                     <p class="mod"><strong>WOD Type:</strong> {{$wod->wod_type}}</p>
