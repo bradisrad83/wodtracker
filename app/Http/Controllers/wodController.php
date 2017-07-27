@@ -70,7 +70,7 @@ class WodController extends Controller
 
             $wod_img="wod-pictures/" . $hashname;
           }else{
-            $wod_img=$request->get('wod_img');
+            $wod_img=$request->get('board_img');
           }
 
         //creating the new WOD and saving it into the database from the
