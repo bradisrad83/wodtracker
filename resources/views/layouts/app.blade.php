@@ -80,6 +80,9 @@
       .becnmark-btn{
         margin-bottom: 10px;
       }
+      img {
+        image-orientation: from-image;
+      }
 
     </style>
 </head>
