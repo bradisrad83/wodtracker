@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Intervention\Image\ImageManagerStatic as Image;
 
 use App\User;
 use App\Profile;
@@ -65,8 +66,9 @@ class WodController extends Controller
 
         if ($request->file('board_img')) {
             $hashname=$request->file('board_img')->hashName();
+            $image = Image::make($request->file('board_img'))->resize(150, 300);
 
-            Storage::disk('s3')->put('wod-pictures/', $request->file('board_img'), 'public');
+            Storage::disk('s3')->put('wod-pictures/', $image, 'public');
 
             $wod_img="wod-pictures/" . $hashname;
           }else{
@@ -124,8 +126,6 @@ class WodController extends Controller
         if ($request->file('board_img')) {
 
           $hashname=$request->file('board_img')->hashName();
-          $resize_img=$request->file('board_img');
-          $resize_img=Image::make($resize_img)->resize(150,300);
 
           Storage::disk('s3')->put('wod-pictures/', $resize_img, 'public');
 
