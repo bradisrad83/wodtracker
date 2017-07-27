@@ -171,6 +171,7 @@ return [
         Cmgmyr\Messenger\MessengerServiceProvider::class,
         Nahid\Talk\TalkServiceProvider::class,
         Aws\Laravel\AwsServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -233,6 +234,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Talk' => Nahid\Talk\Facades\Talk::class,
         'AWS' => Aws\Laravel\AwsFacade::class,
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 
