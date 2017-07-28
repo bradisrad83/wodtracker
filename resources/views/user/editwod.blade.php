@@ -10,7 +10,7 @@
 
   {{ csrf_field() }}
   {{ method_field('PUT') }}
-
+<!--
   <div class="form-group row">
     <label for="board_img" class="col-sm-2 form-control-label">Picture of your WOD (whiteboard)</label>
     <div class="col-sm-6">
@@ -19,6 +19,7 @@
              name="board_img">
     </div>
   </div>
+-->
 
 
 
