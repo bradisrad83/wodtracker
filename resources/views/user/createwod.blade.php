@@ -16,7 +16,9 @@
     <div class="col-sm-6">
       <input
              type="file"
-             name="board_img">
+             name="board_img"
+             height=150
+             width=300>
     </div>
   </div>
 
