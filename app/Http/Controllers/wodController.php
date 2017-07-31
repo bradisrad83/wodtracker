@@ -10,7 +10,7 @@ use App\Profile;
 use App\Wod;
 use App\Benchmark;
 use Storage;
-//use Image;
+
 
 class WodController extends Controller
 {
@@ -138,6 +138,7 @@ class WodController extends Controller
             $image->encode('jpg');
             $wod_img="wod-pictures/" . $hashname;
             Storage::disk('s3')->put($wod_img, (string) $image, 'public');
+          }
         Wod::find($wod->id)->update($request->all());
         //return view('user.allwods')
         //    ->withWods(Wod::where('user_id', $request->user()->id)->get())
