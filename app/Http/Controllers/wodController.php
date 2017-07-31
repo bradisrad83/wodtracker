@@ -10,6 +10,7 @@ use App\Profile;
 use App\Wod;
 use App\Benchmark;
 use Storage;
+//use Image;
 
 class WodController extends Controller
 {
@@ -64,12 +65,14 @@ class WodController extends Controller
         $wod_results = $request->get('wod_results');
         $wod_notes = $request->get('wod_notes');
 
+
         if ($request->file('board_img')) {
             $hashname=$request->file('board_img')->hashName();
+            //$image = (string) Image::make($request->file('board_img'))->encode('jpg');
             Storage::disk('s3')->put('wod-pictures/', $request->file('board_img'), 'public');
 
 
-            //$image = \Image::make($request->file('board_img')->resize(150, 300));
+
             //Storage::disk('s3')->put('wod-pictures/', $image, 'public');
             //  $image = Image::make($request->file(‘image’)->resize(‘300′,’300’)->save(‘$filePathMedium’)->resize(‘100′,’100’)->save(‘$filePathThumb’);
             //  $s3->put($file_path.’medium_’.$image_file_name, $image->fit(300, 300), ‘public’);
@@ -134,7 +137,7 @@ class WodController extends Controller
 
           $hashname=$request->file('board_img')->hashName();
 
-          Storage::disk('s3')->put('wod-pictures/', $resize_img, 'public');
+          Storage::disk('s3')->put('wod-pictures/', $request->file('board_img'), 'public');
 
           $wod_img="wod-pictures/" . $hashname;
 
