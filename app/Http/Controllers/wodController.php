@@ -135,9 +135,8 @@ class WodController extends Controller
             $hashname=$request->file('board_img')->hashName();
             $image=Image::make($request->file('board_img'));
             $image->orientate();
-            $image->encode('jpg');
             $wod_img="wod-pictures/" . $hashname;
-            Storage::disk('s3')->put($wod_img, (string) $image, 'public');
+            Storage::disk('s3')->put($wod_img, (string) $image->encode('jpg'), 'public');
           }
         Wod::find($wod->id)->update($request->all());
         //return view('user.allwods')
