@@ -68,8 +68,8 @@ class WodController extends Controller
 
         if ($request->file('board_img')) {
             $hashname=$request->file('board_img')->hashName();
-            //$image = (string) Image::make($request->file('board_img'))->encode('jpg');
-            Storage::disk('s3')->put('wod-pictures/', $request->file('board_img'), 'public');
+            $image = (string) Image::make($request->file('board_img'))->encode('jpg');
+            Storage::disk('s3')->put('wod-pictures/', (string) $image, 'public');
 
 
 
