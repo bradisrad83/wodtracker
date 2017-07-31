@@ -68,16 +68,15 @@ class WodController extends Controller
 
         if ($request->file('board_img')) {
             $hashname=$request->file('board_img')->hashName();
-            Storage::disk('s3')->put('wod-pictures/', $request->file('board_img'), 'public');
-
-
+            $image=Image::make($request->file('board_img'));
+            $image->orientate();
+            $image->encode('jpg');
+            $wod_img="wod-pictures/" . $hashname;
+            Storage::disk('s3')->put($wod_img, (string) $image, 'public');
 
             //Storage::disk('s3')->put('wod-pictures/', $image, 'public');
             //  $image = Image::make($request->file(‘image’)->resize(‘300′,’300’)->save(‘$filePathMedium’)->resize(‘100′,’100’)->save(‘$filePathThumb’);
             //  $s3->put($file_path.’medium_’.$image_file_name, $image->fit(300, 300), ‘public’);
-
-
-
 
             $wod_img="wod-pictures/" . $hashname;
           }else{
@@ -133,17 +132,12 @@ class WodController extends Controller
     {
         //
         if ($request->file('board_img')) {
-
-          $hashname=$request->file('board_img')->hashName();
-
-          Storage::disk('s3')->put('wod-pictures/', $request->file('board_img'), 'public');
-
-          $wod_img="wod-pictures/" . $hashname;
-
-          $request['wod_img']=$wod_img;
-
-          Storage::disk('s3')->delete($wod->wod_img);
-        }
+            $hashname=$request->file('board_img')->hashName();
+            $image=Image::make($request->file('board_img'));
+            $image->orientate();
+            $image->encode('jpg');
+            $wod_img="wod-pictures/" . $hashname;
+            Storage::disk('s3')->put($wod_img, (string) $image, 'public');
         Wod::find($wod->id)->update($request->all());
         //return view('user.allwods')
         //    ->withWods(Wod::where('user_id', $request->user()->id)->get())
