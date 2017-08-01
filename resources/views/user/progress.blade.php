@@ -3,27 +3,35 @@
 @section('content')
 <div class = "container">
   <h1>Track Progress</h1>
-    <form action="/progress" method="GET" enctype="multipart/form-data">
+    <form action="/progress/{{$wods}}" method="GET" enctype="multipart/form-data">
         {{ csrf_field() }}
 
         <h3>What movement would you like to track?</h3>
           <div class="row">
             <div class="col-sm-5">
               <select id="movement" name="movement" class="form-control">
-                <option>Front Squat</option>
                 <option>Back Squat</option>
-                <option>Overhead Squat</option>
-                <option>Squat Clean</option>
-                <option>Power Clean</option>
-                <option>Snatch</option>
-                <option>Power Snatch</option>
-                <option>Deadlift</option>
-                <option>Strict Press</option>
-                <option>Push Press</option>
-                <option>Push Jerk</option>
+                <option>Chest 2 Bar Pull Ups</option>
                 <option>Clean and Jerk</option>
-                <option>Thruster</option>
+                <option>Deadlift</option>
+                <option>Front Squat</option>
+                <option>Hand Stand Push Ups</option>
+                <option>Kettle Bell Swings</option>
+                <option>Muscle Ups</option>
+                <option>Overhead Squat</option>
+                <option>Power Clean</option>
+                <option>Power Snatch</option>
+                <option>Pull Ups</option>
+                <option>Push Jerk</option>
+                <option>Push Press</option>
+                <option>Ring Dips</option>
+                <option>Snatch</option>
+                <option>Squat Clean</option>
+                <option>Strict Press</option>
                 <option>Sumo Deadlift High Pull</option>
+                <option>Toes 2 Bar</option>
+                <option>Thruster</option>
+                <option>Wall Balls</option>
               </select>
             </div>
           </div>

@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\User;
+use App\Profile;
+use App\Wod;
+use App\Benchmark;
+
+
 class ProgressController extends Controller
 {
 
@@ -16,10 +22,12 @@ class ProgressController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request, User $user)
     {
         //
-        return view('user.progress');
+        return view('user.progress')
+                ->withWods(Wod::where('user_id', $request->user()->id)->get())
+                ->withUser($request->user());
     }
 
     /**
@@ -49,9 +57,10 @@ class ProgressController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, User $user)
     {
         //
+        return view('user.trackprogress');
     }
 
     /**
