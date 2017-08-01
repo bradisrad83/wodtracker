@@ -59,6 +59,7 @@
                   {{ csrf_field() }}
                   {{ method_field('DELETE') }}
                 <button type="button" class="btn btn-default navbar-inverse" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default navbar-inverse"><a class="bottom" href="/benchmark/{{$benchmark->id}}/edit">Edit</a></button>
                 <button class="btn btn-primary navbar-inverse" value="submit" type="submit">Delete</button>
               </form>
             </div>
