@@ -3,9 +3,8 @@
 @section('content')
 <div class = "container">
   <h1>Track Progress</h1>
-    <form action="/progress/{{$wods}}" method="GET" enctype="multipart/form-data">
+    <form action="/progress/{{$progress}}" method="GET" enctype="multipart/form-data">
         {{ csrf_field() }}
-
         <h3>What movement would you like to track?</h3>
           <div class="row">
             <div class="col-sm-5">

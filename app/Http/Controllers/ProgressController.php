@@ -26,10 +26,10 @@ class ProgressController extends Controller
     {
         //
         return view('user.progress')
-                ->withWods(Wod::where('user_id', $request->user()->id)->get())
-                ->withUser($request->user());
-    }
+          ->withProgress(Wod::where('user_id', $request->user()->id)->get())
+          ->withUser($request->user());
 
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -39,7 +39,6 @@ class ProgressController extends Controller
     {
         //
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -50,7 +49,6 @@ class ProgressController extends Controller
     {
         //
     }
-
     /**
      * Display the specified resource.
      *

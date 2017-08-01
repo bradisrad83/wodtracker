@@ -111,11 +111,11 @@
                       <a class="navbar-brand" href="{{ url('/benchmark') }}">
                           Benchmarks/PRs
                       </a>
-                      <!--
+                      
                       <a class="navbar-brand" href="{{ url('/progress') }}">
                           Track Movements
                       </a>
-                    -->
+
                       <a class="navbar-brand" href="{{ url('/search') }}">
                           Users
                       </a>
