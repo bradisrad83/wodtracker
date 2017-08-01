@@ -132,7 +132,7 @@ class WodController extends Controller
     {
         //
         $this->validate($request, [
-          'board_img'=>'size:10240'
+          'board_img' => 'mimes:jpeg,bmp,png|max:10240'
         ]);
 
         if ($request->file('board_img')) {
