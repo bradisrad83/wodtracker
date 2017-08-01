@@ -51,10 +51,10 @@ class WodController extends Controller
      */
     public function store(Request $request)
     {
-        //Laravel validation (wod_type/wod/wod_results are required)
-        //$this->validate($request, [
-        //  'wod_type', 'wod', 'wod_results' =>'required'
-        //]);
+
+        $this->validate($request, [
+          'board_img' => 'mimes:jpeg,bmp,png|max:10240'
+        ]);
 
         //Create the new wod
         $user_id = $request->user()->id;
@@ -131,6 +131,10 @@ class WodController extends Controller
     public function update(Request $request, Wod $wod)
     {
         //
+        $this->validate($request, [
+          'board_img'=>'size:10240'
+        ]);
+
         if ($request->file('board_img')) {
             $hashname=$request->file('board_img')->hashName();
             $image=Image::make($request->file('board_img'));
