@@ -51,6 +51,9 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+          'profile_img' => 'mimes:jpeg,bmp,png|max:10240'
+        ]);
         //Creating a profile
         $user_id=$request->user()->id;
         $name=$request->get('name');

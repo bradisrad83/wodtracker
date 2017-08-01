@@ -5,6 +5,16 @@
 <h1>Edit Profile</h1>
 <hr>
 
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 
 <form action="/profile/{{$profile->id}}" method="POST" enctype="multipart/form-data">
 

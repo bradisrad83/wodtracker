@@ -5,6 +5,15 @@
 <h1>Edit WOD from {{$wod->created_at->format('M d Y')}}</h1>
 <hr>
 
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
 <form action="/wod/{{$wod->id}}" method="POST" enctype="multipart/form-data">
 

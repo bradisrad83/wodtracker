@@ -6,6 +6,16 @@
 <h10>please make sure to hit the submit button even if you leave the fields blank</h10>
 <hr>
 
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 
 <form action="/profile" method="POST" enctype="multipart/form-data">
 
