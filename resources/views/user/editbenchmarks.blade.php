@@ -7,6 +7,7 @@
 
 <form action="/benchmark/{{$benchmark->id}}" method="POST">
   {{ csrf_field() }}
+  {{ method_field('PUT') }}
     <div class="form-group row">
       <label for="benchmark" class="col-sm-2 form-control-label">Benchmark/Hero WOD/PR: </label>
       <div class="col-sm-6">
@@ -37,5 +38,5 @@
 
     </form>
 
-@stop
+@endsection
 </div>

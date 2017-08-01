@@ -89,6 +89,7 @@ class BenchmarkController extends Controller
         return view('user.editbenchmarks')
               ->withBenchmark($benchmark)
               ->withUser($request->user());
+
     }
 
     /**
@@ -98,9 +99,14 @@ class BenchmarkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Benchmark $benchmark)
     {
         //
+        Benchmark::find($benchmark->id)->update($request->all());
+        //return view('user.allwods')
+        //    ->withWods(Wod::where('user_id', $request->user()->id)->get())
+        //    ->withUser($request->user());
+        return redirect()->action("BenchmarkController@index");
     }
 
     /**
