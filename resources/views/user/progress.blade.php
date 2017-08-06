@@ -3,7 +3,7 @@
 @section('content')
 <div class = "container">
   <h1>Track Progress</h1>
-    <form action="/progress/{{$progress}}" method="GET" enctype="multipart/form-data">
+    <form action="/progress/user/{{$user->id}}" method="POST">
         {{ csrf_field() }}
         <h3>What movement would you like to track?</h3>
           <div class="row">
@@ -39,8 +39,8 @@
           <div class="row">
             <div class="col-sm-5">
               <select id="tracker" name="track" class="form-control">
-                <option>Strength</option>
-                <option>WOD</option>
+                <option>strength</option>
+                <option>wod</option>
               </select>
             </div>
           </div>

@@ -3,5 +3,8 @@
 @section('content')
 <div class = "container">
   <h1>TEST</h1>
+  @foreach($progress as $trackprogress)
+    <p>{{$trackprogress}}</p>
+  @endforeach
 @stop
 </div>

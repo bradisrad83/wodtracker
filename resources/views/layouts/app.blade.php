@@ -18,7 +18,7 @@
       body {
           padding-bottom: 50px;
           background-image:url('/images/backgrounds/crossfit6.jpg');
-          background-size: cover;``
+          background-size: cover;
         }
      .bottom{
           color:white;
@@ -111,7 +111,7 @@
                       <a class="navbar-brand" href="{{ url('/benchmark') }}">
                           Benchmarks/PRs
                       </a>
-                      
+
                       <a class="navbar-brand" href="{{ url('/progress') }}">
                           Track Movements
                       </a>
