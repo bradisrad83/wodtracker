@@ -38,10 +38,15 @@ class TrackProgressController extends Controller
       }
 
       $keywords=explode(":", $keywordRaw);
+      //dd($keywords);
+
+
 
       $progress=$user->wods()->whereRaw("MATCH (".$request->track.")
                           against (? in boolean mode)",[$keywords])->get();
+
       //$progress = Wod::where($request->track, 'LIKE', '%'.)->get();
+      dd($progress);
       return view('user.trackprogress')->withProgress($progress);
     }
 }

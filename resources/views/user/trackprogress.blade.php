@@ -4,7 +4,7 @@
 <div class = "container">
   <h1>TEST</h1>
   @foreach($progress as $trackprogress)
-    <p>{{$trackprogress}}</p>
+    <p>{{$trackprogress->strength}}</p>
   @endforeach
 @stop
 </div>
