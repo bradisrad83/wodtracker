@@ -42,11 +42,25 @@ class TrackProgressController extends Controller
 
 
 
-      $progress=$user->wods()->whereRaw("MATCH (".$request->track.")
-                          against (? in boolean mode)",[$keywords])->get();
+      //$progress=$user->wods()->whereRaw("MATCH (".$request->track.")
+      //                    against (? in boolean mode)",[$keywords])->get();
 
       //$progress = Wod::where($request->track, 'LIKE', '%'.)->get();
-      dd($progress);
+      //dd($progress);
+      if(!empty($keywords)){
+           $progress=$user->wods()->whereRaw("MATCH (".$request->track.")
+                         against (? in boolean mode)",[$keywords[0]])->get();
+           //$progress="SELECT DB FROM `$request->track` WHERE keywords LIKE '%$keywords[0]%' ";
+              if(count($keywords)>1){
+              for($i=1;$i<count($keywords);$i++){
+               $progress.=$user->wods()->whereRaw("MATCH (".$request->track.")
+                         against (? in boolean mode)",[$keywords[$i]])->get();
+               //$progress.="AND keywords LIKE '%$keywords[$i]%' ";
+                  }
+             }
+
+      }
+      //dd($progress);
       return view('user.trackprogress')->withProgress($progress);
     }
 }
