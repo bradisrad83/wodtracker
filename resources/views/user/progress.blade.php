@@ -9,28 +9,11 @@
           <div class="row">
             <div class="col-sm-5">
               <select id="movement" name="movement" class="form-control">
-                <option>Back Squat</option>
-                <option>Chest 2 Bar Pull Ups</option>
-                <option>Clean and Jerk</option>
+                <option>Clean</option>
                 <option>Deadlift</option>
-                <option>Front Squat</option>
-                <option>Hand Stand Push Ups</option>
-                <option>Kettle Bell Swings</option>
-                <option>Muscle Ups</option>
-                <option>Overhead Squat</option>
-                <option>Power Clean</option>
-                <option>Power Snatch</option>
-                <option>Pull Ups</option>
-                <option>Push Jerk</option>
-                <option>Push Press</option>
-                <option>Ring Dips</option>
+                <option>Jerk</option>
+                <option>Squat</option>
                 <option>Snatch</option>
-                <option>Squat Clean</option>
-                <option>Strict Press</option>
-                <option>Sumo Deadlift High Pull</option>
-                <option>Toes 2 Bar</option>
-                <option>Thruster</option>
-                <option>Wall Balls</option>
               </select>
             </div>
           </div>
