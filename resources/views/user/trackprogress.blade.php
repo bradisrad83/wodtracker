@@ -7,7 +7,6 @@
     @if(count($progress) < 1)
       <p>You have not recorded any {{$movement}} for {{$tracker}}</p>
     @else
-      <p>Now I gotta show the portions</p>
       @foreach($progress as $trackprogressstrength => $values)
       <div class="col-sm-2">
         <button type="button" class="btn btn-primary navbar-inverse btn-sm btn-block" data-toggle="modal" data-target="#myModal{{$values->id}}">
