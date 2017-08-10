@@ -3,6 +3,7 @@
 @section('content')
 <div class = "container">
   <h1>Track Progress</h1>
+  <h5>*please not that if you have been taking pictures of WODs this feature will not work*</h5>
     <form action="/progress/user/{{$user->id}}" method="POST">
         {{ csrf_field() }}
         <h3>What movement would you like to track?</h3>

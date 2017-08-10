@@ -32,6 +32,9 @@
       h3{
         color:white;
       }
+      h5{
+        color:white;
+      }
       p{
         color:white;
       }
