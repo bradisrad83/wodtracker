@@ -4,18 +4,30 @@
 <div class = "container">
 <h1>WODs</h1>
       @foreach($wods as $wod)
+        @if($wod->wod_date)
           <div class="col-sm-2">
-          <button type="button" class="btn btn-primary navbar-inverse btn-sm btn-block" data-toggle="modal" data-target="#myModal{{$wod->id}}">
-              {{$wod->created_at->format('M d Y')}}
-          </button>
-        </div>
+            <button type="button" class="btn btn-primary navbar-inverse btn-sm btn-block" data-toggle="modal" data-target="#myModal{{$wod->id}}">
+                {{$wod->wod_date}}
+            </button>
+          </div>
+        @else
+          <div class="col-sm-2">
+            <button type="button" class="btn btn-primary navbar-inverse btn-sm btn-block" data-toggle="modal" data-target="#myModal{{$wod->id}}">
+                {{$wod->created_at->format('M d Y')}}
+            </button>
+          </div>
+        @endif
             <!-- Modal -->
             <div class="modal fade" id="myModal{{$wod->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">{{$wod->created_at->format('M d Y')}}</h4>
+                    @if($wod->wod_date)
+                      <h4 class="modal-title" id="myModalLabel">{{$wod->wod_date}}</h4>
+                    @else
+                      <h4 class="modal-title" id="myModalLabel">{{$wod->created_at->format('M d Y')}}</h4>
+                    @endif
                   </div>
                   <div class="modal-body">
                     @if($wod->wod_img)

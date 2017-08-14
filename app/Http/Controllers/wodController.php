@@ -64,6 +64,7 @@ class WodController extends Controller
         $wod = $request->get('wod');
         $wod_results = $request->get('wod_results');
         $wod_notes = $request->get('wod_notes');
+        $wod_date = $request->get('wod_date');
 
 
         if ($request->file('board_img')) {
@@ -88,7 +89,7 @@ class WodController extends Controller
         $daily_wod = new Wod(['user_id'=>$user_id, 'strength'=>$strength,
                               'strength_notes'=>$strength_notes,'wod_type'=>$wod_type,
                               'wod'=>$wod, 'wod_results'=>$wod_results, 'wod_notes'=>$wod_notes,
-                              'wod_img'=>$wod_img]);
+                              'wod_img'=>$wod_img, 'wod_date'=>$wod_date]);
         $daily_wod->save();
         //Passes the ID of the WOd to the show function so that it can be displayed after entered
         return redirect()->action("WodController@index");

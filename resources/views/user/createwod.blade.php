@@ -19,6 +19,16 @@
 
   {{ csrf_field() }}
 
+<div class="form-group row">
+  <label for="wod_date" class="col-sm-2 form-control-label">Date of WOD **Please leave blank if you are entering todays WOD**</label>
+    <div class="col-sm-6">
+      <input class="form-control"
+             type="text"
+             name="wod_date"
+             placeholder="Date of WOD: Month Day Year">
+    </div>
+  </div>
+
 
  <div class="form-group row">
     <label for="board_img" class="col-sm-2 form-control-label">Picture of your WOD (whiteboard)</label>

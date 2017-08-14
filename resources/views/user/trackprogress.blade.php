@@ -8,18 +8,29 @@
       <p>You have not recorded any {{$movement}} for {{$tracker}}</p>
     @else
       @foreach($progress as $trackprogressstrength => $values)
-      <div class="col-sm-2">
-        <button type="button" class="btn btn-primary navbar-inverse btn-sm btn-block" data-toggle="modal" data-target="#myModal{{$values->id}}">
-          {{$values->created_at->format('M d Y')}}
-        </button>
-      </div>
+        @if($values->wod_date)
+          <div class="col-sm-2">
+            <button type="button" class="btn btn-primary navbar-inverse btn-sm btn-block" data-toggle="modal" data-target="#myModal{{$values->id}}">
+              {{$values->wod_date}}
+            </button>
+          </div>
+        @else
+          <div class="col-sm-2">
+            <button type="button" class="btn btn-primary navbar-inverse btn-sm btn-block" data-toggle="modal" data-target="#myModal{{$values->id}}">
+              {{$values->created_at->format('M d Y')}}
+            </button>
+          </div>
+        @endif
       <!-- Modal -->
       <div class="modal fade" id="myModal{{$values->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">{{$values->created_at->format('M d Y')}}</h4>
+              @if($values->wod_date)
+                <h4 class="modal-title" id="myModalLabel">{{$values->wod_date}}</h4>
+              @else
+                <h4 class="modal-title" id="myModalLabel">{{$values->created_at->format('M d Y')}}</h4>
+              @endif
             </div>
             <div class="modal-body">
               @if($values->wod_img)
