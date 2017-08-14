@@ -170,11 +170,9 @@
                                         <a href="{{ url('/benchmark') }}">
                                             Benchmarks/PRs
                                         </a>
-                                        <!--
                                         <a href="{{ url('/progress') }}">
                                             Track Movements
                                         </a>
-                                      -->
                                         <a href="{{ url('/search') }}">
                                             Users
                                         </a>
