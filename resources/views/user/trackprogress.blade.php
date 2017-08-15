@@ -52,8 +52,15 @@
           @if($values->wod_img)
             <img src="https://s3.us-east-2.amazonaws.com/dwtbucket/{{$values->wod_img}}" alt = "" height="150" width="300">
           @endif
-          <p class="mod"><strong>Strength: </strong>{{$values->strength}}</p>
-          <p class="mod"><strong>Strength Notes: </strong>{{$values->strength_notes}}</p>
+          @if($tracker=='strength')
+            <p class="mod"><strong>Strength: </strong>{{$values->strength}}</p>
+            <p class="mod"><strong>Strength Notes: </strong>{{$values->strength_notes}}</p>
+          @else
+            <p class="mod"><strong>WOD Type:</strong> {{$values->wod_type}}</p>
+            <p class="mod"><strong>WOD: </strong>{{$values->wod}}</p>
+            <p class="mod"><strong>WOD Results:</strong> {{$values->wod_results}}</p>
+            <p class="mod"><strong>WOD Notes:</strong> {{$values->wod_notes}}</p>
+          @endif
         </div>
         <div class="modal-footer">
               <button type="button" class="btn btn-default navbar-inverse" data-dismiss="modal">Close</button>
