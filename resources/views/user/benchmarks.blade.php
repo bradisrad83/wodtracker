@@ -6,6 +6,17 @@
   <h1>Benchmark/PRs</h1>
     <form action="/benchmark" method="POST">
       {{ csrf_field() }}
+
+      <div class="form-group row">
+        <label for="benchmark_date" class="col-sm-2 form-control-label">Date of Benchmark **Please leave blank if you are entering for todays Date**</label>
+          <div class="col-sm-6">
+            <input class="form-control"
+                   type="text"
+                   name="benchmark_date"
+                   placeholder="Date of Benchmark: Month Day Year">
+          </div>
+        </div>
+
         <div class="form-group row">
           <label for="benchmark" class="col-sm-2 form-control-label">Benchmark/Hero WOD/PR: </label>
           <div class="col-sm-6">
@@ -36,11 +47,19 @@
         <br>
 
         @foreach($benchmarks as $benchmark)
-          <div class="col-sm-3">
-            <button type="button" class="btn btn-primary navbar-inverse btn-sm becnmark-btn btn-block" data-toggle="modal" data-target="#myModal{{$benchmark->id}}">
-                {{$benchmark->created_at->format('M d Y')}}: {{$benchmark->benchmark}}
-            </button>
-        </div>
+          @if($benchmark->benchmark_date)
+            <div class="col-sm-3">
+              <button type="button" class="btn btn-primary navbar-inverse btn-sm becnmark-btn btn-block" data-toggle="modal" data-target="#myModal{{$benchmark->id}}">
+                  {{$benchmark->benchmark_date}}: {{$benchmark->benchmark}}
+              </button>
+            </div>
+          @else
+            <div class="col-sm-3">
+              <button type="button" class="btn btn-primary navbar-inverse btn-sm becnmark-btn btn-block" data-toggle="modal" data-target="#myModal{{$benchmark->id}}">
+                  {{$benchmark->created_at->format('M d Y')}}: {{$benchmark->benchmark}}
+              </button>
+            </div>
+          @endif
 
       <!-- Modal -->
       <div class="modal fade" id="myModal{{$benchmark->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -48,7 +67,11 @@
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">{{$benchmark->created_at->format('M d Y')}}</h4>
+                @if($benchmark->benchmark_date)
+                  <h4 class="modal-title" id="myModalLabel">{{$benchmark->benchmark_date}}</h4>
+                @else
+                  <h4 class="modal-title" id="myModalLabel">{{$benchmark->created_at->format('M d Y')}}</h4>
+                @endif
             </div>
             <div class="modal-body">
               <p class="mod"><strong>Benchmark: </strong>{{$benchmark->benchmark}}</p>
@@ -67,7 +90,7 @@
         </div>
       </div>
 
-        @endforeach
+      @endforeach
 
 @stop
 </div>

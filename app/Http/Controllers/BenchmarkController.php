@@ -55,9 +55,11 @@ class BenchmarkController extends Controller
         $user_id = $request->user()->id;
         $benchmark = $request->get('benchmark');
         $benchmark_results = $request->get('benchmark_results');
+        $benchmark_date = $request->get('benchmark_date');
 
         $new_benchmark = New Benchmark(['user_id'=>$user_id,
-          'benchmark'=>$benchmark, 'benchmark_results'=>$benchmark_results
+          'benchmark'=>$benchmark, 'benchmark_results'=>$benchmark_results,
+          'benchmark_date'=>$benchmark_date
         ]);
         $new_benchmark->save();
 

@@ -8,6 +8,18 @@
 <form action="/benchmark/{{$benchmark->id}}" method="POST">
   {{ csrf_field() }}
   {{ method_field('PUT') }}
+
+  <div class="form-group row">
+    <label for="benchmark_date" class="col-sm-2 form-control-label">Date of Benchmark **Please leave blank if you are entering for todays Date**</label>
+      <div class="col-sm-6">
+        <input class="form-control"
+               type="text"
+               name="benchmark_date"
+               placeholder="Date of Benchmark: Month Day Year"
+               value="{{$benchmark->benchmark_date}}">>
+      </div>
+    </div>
+
     <div class="form-group row">
       <label for="benchmark" class="col-sm-2 form-control-label">Benchmark/Hero WOD/PR: </label>
       <div class="col-sm-6">
