@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Benchmark extends Model
 {
   //Attributes that are mass assignable
-  protected $fillable =['user_id','benchmark','benchmark_results'];
+  protected $fillable =['user_id','benchmark','benchmark_results', 'benchmark_date'];
     //
     public function Benchmark() {
       //Benchmark Model belongs to user
