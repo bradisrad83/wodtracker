@@ -15,6 +15,7 @@
                 <option>Jerk</option>
                 <option>Squat</option>
                 <option>Snatch</option>
+                <option>Thruster</option>
               </select>
             </div>
           </div>
