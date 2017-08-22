@@ -22,7 +22,9 @@
                   <div class="modal-body">
                     <ul>
                       <p class="mod">{{$profile->name}}</p>
-                      <img src="https://s3.us-east-2.amazonaws.com/dwtbucket/{{$profile->img_link}}" alt = "profile_pic" height="100" width="100">
+                      @if($profile->img_link)
+                        <img src="https://s3.us-east-2.amazonaws.com/dwtbucket/{{$profile->img_link}}" alt = "profile_pic" height="100" width="100">
+                      @endif
                       <li><p class="mod"><strong>Location: </strong>{{$profile->location}}</p></li>
                       <li><p class="mod"><strong>Age: </strong>{{$profile->age}}</p></li>
                       <li><p class="mod"><strong>Height: </strong>{{$profile->height}}</p></li>
