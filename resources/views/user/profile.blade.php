@@ -4,7 +4,9 @@
 <div class="container">
 <ul>
   <p>{{$profile->name}}</p>
-  <img src="https://s3.us-east-2.amazonaws.com/dwtbucket/{{$profile->img_link}}" alt = "" height="200" width="200">
+  @if($profile->img_link)
+    <img src="https://s3.us-east-2.amazonaws.com/dwtbucket/{{$profile->img_link}}" alt = "" height="200" width="200">
+  @endif
   <li><p><strong>Location: </strong>{{$profile->location}}</p></li>
   <li><p><strong>Age: </strong>{{$profile->age}}</p></li>
   <li><p><strong>Height: </strong>{{$profile->height}}</p></li>
