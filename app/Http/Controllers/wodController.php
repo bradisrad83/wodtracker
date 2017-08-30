@@ -27,7 +27,7 @@ class WodController extends Controller
     {
         //
         return view('user.allwods')
-                ->withWods(Wod::where('user_id', $request->user()->id)->get())
+                ->withWods(Wod::where('user_id', $request->user()->id)->get()->sortByDesc('created_at'))
                 ->withUser($request->user());
     }
 
