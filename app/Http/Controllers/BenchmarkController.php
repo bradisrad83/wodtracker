@@ -24,7 +24,7 @@ class BenchmarkController extends Controller
     {
         //
         return view('user.benchmarks')
-                ->withBenchmarks(Benchmark::where('user_id', $request->user()->id)->get())
+                ->withBenchmarks(Benchmark::where('user_id', $request->user()->id)->get()->sortByDesc('created_at'))
                 ->withUser($request->user());
     }
 
