@@ -13,6 +13,7 @@
                 <option>Clean</option>
                 <option>Deadlift</option>
                 <option>Jerk</option>
+                <option>Press</option>
                 <option>Squat</option>
                 <option>Snatch</option>
                 <option>Thruster</option>
